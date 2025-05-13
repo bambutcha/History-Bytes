@@ -100,13 +100,6 @@ function detectScroll() {
         } else {
             header.classList.remove('scrolled');
         }
-        
-        // Скрываем индикатор прокрутки временной шкалы после начала прокрутки
-        const scrollIndicator = document.querySelector('.timeline-scroll-indicator');
-        if (scrollIndicator && window.scrollY > 300) {
-            scrollIndicator.style.opacity = '0';
-            scrollIndicator.style.transition = 'opacity 0.5s ease';
-        }
     });
 }
 

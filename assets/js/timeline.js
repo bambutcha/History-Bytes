@@ -76,7 +76,7 @@ function initTimelineScroll() {
         // Если горизонтальное движение больше вертикального, то это свайп
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             e.preventDefault(); // Предотвращаем стандартную прокрутку страницы
-            timeline.scrollLeft += deltaX;
+            timeline.scrollLeft += deltaX * 1.5; // Увеличиваем чувствительность свайпа
             touchStartX = touchEndX;
             touchStartY = touchEndY;
         }
