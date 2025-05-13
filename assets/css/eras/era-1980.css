@@ -1,0 +1,483 @@
+/* Стили для эпохи 1980-х годов */
+
+:root {
+    /* Переопределяем цветовую схему для 1980-х */
+    --primary-color: #4848FF;
+    --secondary-color: #FFC000;
+    --dark-color: #000084;
+    --light-color: #FFFFFF;
+    --grey-color: #AAAAAA;
+    --background-color: #000084;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'Press Start 2P', cursive;
+    --body-font: 'IBM Plex Mono', monospace;
+    
+    /* Размеры и отступы */
+    --border-radius: 0px;
+}
+
+/* Основные стили для эпохи 1980-х */
+.era-1980 {
+    background-color: var(--background-color);
+    color: var(--light-color);
+    font-family: var(--body-font);
+    line-height: 1.4;
+    font-size: 16px;
+}
+
+/* Стилизация заголовков */
+.era-1980 h1, 
+.era-1980 h2, 
+.era-1980 h3, 
+.era-1980 h4, 
+.era-1980 h5, 
+.era-1980 h6 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.era-1980 h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.era-1980 h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.era-1980 h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Хедер */
+.era-1980 .site-header {
+    background-color: var(--dark-color);
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+/* Логотип */
+.era-1980 .logo-symbol {
+    color: var(--secondary-color);
+}
+
+.era-1980 .logo-text {
+    color: var(--light-color);
+    font-family: var(--heading-font);
+    font-size: 0.7rem;
+}
+
+/* Меню */
+.era-1980 .hamburger-menu span {
+    background-color: var(--secondary-color);
+    height: 3px;
+}
+
+.era-1980 .main-nav {
+    background-color: var(--dark-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.era-1980 .main-nav ul {
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px 0;
+}
+
+.era-1980 .main-nav a {
+    color: var(--light-color);
+    font-family: var(--heading-font);
+    font-size: 0.65rem;
+    padding: 8px 5px;
+    display: block;
+    text-align: center;
+}
+
+.era-1980 .main-nav a:hover,
+.era-1980 .main-nav a.active {
+    color: var(--secondary-color);
+}
+
+/* Заголовок десятилетия */
+.era-1980 .decade-header {
+    background: linear-gradient(to right, #005aa7, #fffde4);
+    padding: 2rem 0;
+    position: relative;
+}
+
+.era-1980 .decade-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.era-1980 .decade-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.era-1980 .decade-header h1 {
+    color: var(--light-color);
+    text-shadow: 2px 2px 0 var(--dark-color), 4px 4px 0 var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.era-1980 .decade-header p {
+    font-family: var(--heading-font);
+    font-size: 0.7rem;
+    color: var(--light-color);
+    text-shadow: 1px 1px 0 var(--dark-color);
+}
+
+/* Секции */
+.era-1980 .section-title {
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 5px;
+    background-color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    position: relative;
+}
+
+.era-1980 .section-title::after {
+    display: none;
+}
+
+.era-1980 .section-title::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--secondary-color);
+    pointer-events: none;
+}
+
+/* Карточки компьютеров */
+.era-1980 .computer-card {
+    background-color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.era-1980 .computer-card::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--secondary-color);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.era-1980 .computer-card h3 {
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    padding: 8px;
+    margin: -1rem -1rem 1rem -1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 2;
+}
+
+.era-1980 .computer-image {
+    border: 2px solid var(--secondary-color);
+    margin: 1rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.era-1980 .computer-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.1) 1px, rgba(0, 0, 0, 0.1) 2px);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.era-1980 .computer-description {
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+.era-1980 .computer-specs {
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.8rem;
+    margin: 1rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.era-1980 .computer-specs h4 {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.era-1980 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.era-1980 .computer-specs th,
+.era-1980 .computer-specs td {
+    padding: 6px 4px;
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+.era-1980 .computer-specs th {
+    text-align: left;
+    font-family: var(--heading-font);
+    font-size: 0.6rem;
+    color: var(--secondary-color);
+    width: 40%;
+}
+
+.era-1980 .computer-specs td {
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    color: var(--light-color);
+}
+
+/* Личности */
+.era-1980 .personality-card {
+    background-color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.era-1980 .personality-card::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--secondary-color);
+    pointer-events: none;
+}
+
+.era-1980 .personality-card h3 {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-size: 0.85rem;
+    padding: 8px;
+    margin: -1rem -1rem 1rem -1rem;
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Факты */
+.era-1980 .facts-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.era-1980 .facts-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.era-1980 .facts-list li::before {
+    content: '■';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.3rem;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
+
+/* Навигация по эпохам */
+.era-1980 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.era-1980 .era-nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 8px 12px;
+    border: 2px solid var(--secondary-color);
+    font-family: var(--heading-font);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.era-1980 .era-nav-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+/* Эффекты ранних компьютерных интерфейсов */
+.era-1980 .pixel-effect {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Эффект мигающего курсора */
+.era-1980 .blink-cursor {
+    position: relative;
+}
+
+.era-1980 .blink-cursor::after {
+    content: '█';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    color: var(--secondary-color);
+    animation: blink-animation 1s step-end infinite;
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Кнопки и интерактивные элементы */
+.era-1980 button,
+.era-1980 .button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 2px solid var(--secondary-color);
+    font-family: var(--heading-font);
+    font-size: 0.7rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.era-1980 button:hover,
+.era-1980 .button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+/* CTА-кнопка */
+.era-1980 .cta-button {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: 2px solid var(--primary-color);
+    font-family: var(--heading-font);
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+
+.era-1980 .cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--secondary-color);
+}
+
+/* Футер */
+.era-1980 .site-footer {
+    background-color: var(--dark-color);
+    border-top: 3px solid var(--secondary-color);
+    color: var(--light-color);
+    font-family: var(--heading-font);
+    font-size: 0.7rem;
+}
+
+.era-1980 .footer-logo {
+    color: var(--secondary-color);
+}
+
+.era-1980 .footer-links a {
+    color: var(--light-color);
+    font-size: 0.65rem;
+}
+
+.era-1980 .footer-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.era-1980 .copyright {
+    font-size: 0.6rem;
+    color: var(--grey-color);
+}
+
+/* Адаптивность для разных устройств */
+@media (min-width: 576px) {
+    .era-1980 h1 {
+        font-size: 2rem;
+    }
+    
+    .era-1980 .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .era-1980 .computer-card h3,
+    .era-1980 .personality-card h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-1980 .decade-header h1 {
+        font-size: 2.3rem;
+    }
+    
+    .era-1980 .decade-header p {
+        font-size: 0.8rem;
+    }
+    
+    .era-1980 .computer-specs table {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .era-1980 .era-nav-button {
+        font-size: 0.7rem;
+        padding: 10px 16px;
+    }
+}

@@ -212,7 +212,7 @@ section {
 }
 
 .main-nav.active {
-    right: 0;
+    right: -60%;
 }
 
 .main-nav ul {

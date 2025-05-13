@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Интерактивные симуляторы исторических интерфейсов вычислительной техники">
+    <title>Симуляторы - История вычислительной техники</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/simulators.css">
+    <!-- Фавиконка -->
+    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
+    <!-- OpenGraph теги -->
+    <meta property="og:title" content="Симуляторы - История вычислительной техники">
+    <meta property="og:description" content="Интерактивные симуляторы исторических интерфейсов вычислительной техники">
+    <meta property="og:image" content="assets/images/ui/og-image.jpg">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Хедер с логотипом и меню -->
+        <header class="site-header">
+            <div class="logo-container">
+                <div class="logo" id="animated-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span class="logo-text">Байты истории</span>
+                </div>
+            </div>
+            <div class="hamburger-menu" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#timeline">Хронология</a></li>
+                    <li><a href="quiz.html">Квиз</a></li>
+                    <li><a href="time-machine.html">Машина времени</a></li>
+                    <li><a href="simulators.html" class="active">Симуляторы</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <section class="simulators-section">
+                <h1 class="main-title">Симуляторы</h1>
+                <p class="section-description">Погрузитесь в историю через интерактивные симуляторы интерфейсов разных эпох</p>
+
+                <div class="simulators-grid">
+                    <!-- Симулятор терминала -->
+                    <div class="simulator-card" id="terminal-simulator">
+                        <div class="simulator-header">
+                            <h2>Терминал МЭСМ</h2>
+                            <span class="era-badge">1950-е</span>
+                        </div>
+                        <div class="simulator-content">
+                            <div class="terminal-output"></div>
+                            <div class="terminal-input" contenteditable="true"></div>
+                        </div>
+                        <div class="simulator-info">
+                            <p>Симулятор терминала первой советской ЭВМ МЭСМ. Попробуйте ввести команды: help, date, info, list, clear</p>
+                        </div>
+                    </div>
+
+                    <!-- Симулятор DOS -->
+                    <div class="simulator-card" id="dos-simulator">
+                        <div class="simulator-header">
+                            <h2>MS-DOS</h2>
+                            <span class="era-badge">1980-е</span>
+                        </div>
+                        <div class="simulator-content">
+                            <div class="dos-window">
+                                <div class="dos-header">
+                                    <span class="dos-title">MS-DOS 3.3</span>
+                                    <div class="dos-controls">
+                                        <span class="dos-minimize">_</span>
+                                        <span class="dos-maximize">□</span>
+                                        <span class="dos-close">×</span>
+                                    </div>
+                                </div>
+                                <div class="dos-output"></div>
+                                <div class="dos-input">
+                                    <span class="dos-prompt">C:\></span>
+                                    <input type="text" class="dos-command">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="simulator-info">
+                            <p>Симулятор операционной системы MS-DOS. Попробуйте команды: dir, cd, type, copy, del</p>
+                        </div>
+                    </div>
+
+                    <!-- Симулятор Windows 3.1 -->
+                    <div class="simulator-card">
+                        <div class="card-header">
+                            <h3>Windows 3.1</h3>
+                            <span class="era-badge">1990-е</span>
+                        </div>
+                        <div class="simulator-content windows-simulator">
+                            <div class="windows-desktop">
+                                <!-- Иконки на рабочем столе -->
+                                <div class="desktop-icons">
+                                    <div class="desktop-icon" data-program="notepad">
+                                        <img src="assets/images/ui/notepad.png" alt="Блокнот">
+                                        <span>Блокнот</span>
+                                    </div>
+                                    <div class="desktop-icon" data-program="calculator">
+                                        <img src="assets/images/ui/calc.png" alt="Калькулятор">
+                                        <span>Калькулятор</span>
+                                    </div>
+                                    <div class="desktop-icon" data-program="paint">
+                                        <img src="assets/images/ui/paint.png" alt="Paint">
+                                        <span>Paint</span>
+                                    </div>
+                                </div>
+
+                                <!-- Меню Start -->
+                                <div class="start-menu">
+                                    <div class="start-menu-item" data-program="notepad">
+                                        <img src="assets/images/ui/notepad.png" alt="Блокнот">
+                                        <span>Блокнот</span>
+                                    </div>
+                                    <div class="start-menu-item" data-program="calculator">
+                                        <img src="assets/images/ui/calc.png" alt="Калькулятор">
+                                        <span>Калькулятор</span>
+                                    </div>
+                                    <div class="start-menu-item" data-program="paint">
+                                        <img src="assets/images/ui/paint.png" alt="Paint">
+                                        <span>Paint</span>
+                                    </div>
+                                </div>
+
+                                <!-- Панель задач -->
+                                <div class="taskbar">
+                                    <div class="start-button">
+                                        <img src="assets/images/ui/start.png" alt="Start">
+                                        <span>Start</span>
+                                    </div>
+                                    <div class="taskbar-programs"></div>
+                                    <div class="taskbar-time">00:00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span>Байты истории</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="about.html#sources">Источники</a></li>
+                        <li><a href="about.html#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Байты истории. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/simulators.js"></script>
+</body>
+</html> 

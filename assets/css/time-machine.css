@@ -1,0 +1,119 @@
+/* Стили для машины времени */
+.time-machine {
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.tm-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.era-selectors {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.era-selector {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.era-selector:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.comparison-container {
+    display: grid;
+    gap: var(--spacing-lg);
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.comparison-category {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.comparison-category h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.era-value {
+    font-family: var(--mono-font);
+}
+
+.era-value.old {
+    color: var(--grey-color);
+}
+
+.era-value.new {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.diff-indicator {
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+    .time-machine {
+        padding: var(--spacing-md);
+    }
+    
+    .tm-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .era-selectors {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .era-selector {
+        width: 100%;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: var(--spacing-xs);
+        font-size: var(--font-size-sm);
+    }
+} 

@@ -1,0 +1,225 @@
+/* Стили для страницы "О проекте" */
+
+/* Основные секции */
+.about-section,
+.sources-section,
+.contact-section {
+    --section-padding: clamp(2rem, 5vw, 4rem);
+    --section-margin: clamp(3rem, 8vw, 6rem);
+    
+    padding: var(--section-padding);
+    margin: var(--section-margin) auto;
+    max-width: min(90%, 1200px);
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section:hover,
+.sources-section:hover,
+.contact-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 6px 8px rgba(0, 0, 0, 0.05),
+        0 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Контент */
+.about-content,
+.sources-content,
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Заголовки */
+.about-text h2,
+.sources-list h3,
+.contact-info h3 {
+    color: var(--accent-color);
+    margin: 2rem 0 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.about-text h2::after,
+.sources-list h3::after,
+.contact-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.about-text h2:hover::after,
+.sources-list h3:hover::after,
+.contact-info h3:hover::after {
+    width: 100px;
+}
+
+/* Текст */
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+/* Списки */
+.about-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.about-text ul li {
+    position: relative;
+    padding: 1rem 1.5rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-text ul li::before {
+    content: "→";
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.about-text ul li:hover {
+    transform: translateX(10px);
+    background: var(--bg-hover);
+}
+
+.about-text ul li:hover::before {
+    transform: translateX(5px);
+}
+
+/* Секция источников */
+.sources-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.sources-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.sources-list ul li {
+    padding: 1.2rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.sources-list ul li:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция контактов */
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-list li:hover {
+    transform: translateX(10px);
+    background: var(--bg-hover);
+}
+
+.contact-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: var(--accent-color-hover);
+}
+
+.contact-list a:hover::after {
+    width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-section,
+    .sources-section,
+    .contact-section {
+        --section-padding: 1.5rem;
+        --section-margin: 2rem;
+    }
+
+    .sources-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section,
+    .sources-section,
+    .contact-section {
+        --section-padding: 1rem;
+        --section-margin: 1.5rem;
+    }
+
+    .about-text ul li,
+    .sources-list ul li,
+    .contact-list li {
+        padding: 1rem;
+    }
+} 

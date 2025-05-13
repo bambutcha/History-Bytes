@@ -1,0 +1,386 @@
+/* Стили для эпохи 1960-х годов */
+
+:root {
+    /* Переопределяем цветовую схему для 1960-х */
+    --primary-color: #3A9188;
+    --secondary-color: #B66D18;
+    --dark-color: #081D1A;
+    --light-color: #C4F0EC;
+    --grey-color: #6FA6A2;
+    --background-color: #081D1A;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'VT323', monospace;
+    --body-font: 'VT323', monospace;
+    
+    /* Размеры и отступы */
+    --border-radius: 0px;
+}
+
+/* Основные стили для эпохи 1960-х */
+.era-1960 {
+    background-color: var(--background-color);
+    color: var(--light-color);
+    font-family: var(--body-font);
+}
+
+/* Стилизация заголовков */
+.era-1960 h1, 
+.era-1960 h2, 
+.era-1960 h3, 
+.era-1960 h4, 
+.era-1960 h5, 
+.era-1960 h6 {
+    font-family: var(--heading-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Хедер */
+.era-1960 .site-header {
+    background-color: var(--dark-color);
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: none;
+}
+
+/* Логотип */
+.era-1960 .logo-symbol {
+    color: var(--primary-color);
+}
+
+.era-1960 .logo-text {
+    color: var(--light-color);
+}
+
+/* Меню */
+.era-1960 .hamburger-menu span {
+    background-color: var(--primary-color);
+}
+
+.era-1960 .main-nav {
+    background-color: var(--dark-color);
+}
+
+.era-1960 .main-nav a {
+    color: var(--light-color);
+    border-bottom: 1px solid var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.era-1960 .main-nav a:hover,
+.era-1960 .main-nav a.active {
+    color: var(--secondary-color);
+}
+
+/* Заголовок десятилетия */
+.era-1960 .decade-header {
+    background: linear-gradient(45deg, #3A1C71, #B66D18);
+    color: var(--light-color);
+}
+
+.era-1960 .decade-header::before {
+    background-color: rgba(8, 29, 26, 0.7);
+}
+
+.era-1960 .decade-header h1 {
+    text-shadow: 2px 2px 0px var(--dark-color);
+    letter-spacing: 2px;
+}
+
+/* Секции */
+.era-1960 .section-title {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.era-1960 .section-title::after {
+    display: none;
+}
+
+/* Карточки компьютеров */
+.era-1960 .computer-card {
+    border: 2px solid var(--primary-color);
+    background-color: rgba(58, 145, 136, 0.1);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.era-1960 .computer-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    border-bottom: 1px dashed var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.era-1960 .computer-image {
+    border: 1px solid var(--primary-color);
+    margin: 1rem 0;
+}
+
+.era-1960 .computer-description {
+    line-height: 1.6;
+}
+
+.era-1960 .computer-specs {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.era-1960 .computer-specs h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.era-1960 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.era-1960 .computer-specs th {
+    text-align: left;
+    color: var(--light-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--grey-color);
+    font-weight: normal;
+}
+
+.era-1960 .computer-specs td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--grey-color);
+    color: var(--secondary-color);
+}
+
+/* Личности */
+.era-1960 .personality-card {
+    background-color: rgba(58, 145, 136, 0.1);
+    border: 1px solid var(--primary-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.era-1960 .personality-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Факты */
+.era-1960 .facts-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.era-1960 .facts-list li {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+}
+
+.era-1960 .facts-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Навигация по эпохам */
+.era-1960 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.era-1960 .era-nav-button {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    padding: 0.8rem 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.era-1960 .era-nav-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+/* Терминальный эффект */
+.era-1960 .terminal-effect {
+    font-family: var(--body-font);
+    position: relative;
+    overflow: hidden;
+}
+
+.era-1960 .terminal-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0px,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0.1) 1px,
+        rgba(0, 0, 0, 0.1) 2px
+    );
+    pointer-events: none;
+}
+
+/* Мерцающий курсор */
+.era-1960 .terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Футер */
+.era-1960 .site-footer {
+    background-color: var(--dark-color);
+    border-top: 2px solid var(--primary-color);
+}
+
+.era-1960 .footer-logo {
+    color: var(--light-color);
+}
+
+.era-1960 .footer-links a {
+    color: var(--light-color);
+}
+
+.era-1960 .footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.era-1960 .copyright {
+    color: var(--grey-color);
+}
+
+/* Специальные эффекты эпохи */
+.era-1960 .effect-scanline {
+    position: relative;
+    overflow: hidden;
+}
+
+.era-1960 .effect-scanline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(196, 240, 236, 0.3);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes scanline {
+    0% {
+        top: -5%;
+    }
+    100% {
+        top: 105%;
+    }
+}
+
+/* Эффект старого CRT-монитора */
+.era-1960 .effect-crt {
+    position: relative;
+}
+
+.era-1960 .effect-crt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(8, 29, 26, 0) 50%, 
+        rgba(8, 29, 26, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Кнопки и интерактивные элементы */
+.era-1960 button,
+.era-1960 .button {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    font-family: var(--body-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.era-1960 button:hover,
+.era-1960 .button:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+/* CTА-кнопка */
+.era-1960 .cta-button {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.era-1960 .cta-button:hover {
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Адаптивность для разных устройств */
+@media (min-width: 576px) {
+    .era-1960 .decade-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .era-1960 .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .era-1960 .computer-card h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-1960 .computer-specs table {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .era-1960 .personality-card {
+        padding: 2rem;
+    }
+}

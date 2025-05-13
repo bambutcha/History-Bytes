@@ -1,0 +1,453 @@
+/* Стили для эпохи 1990-х годов */
+
+:root {
+    /* Переопределяем цветовую схему для 1990-х Windows 95/98 */
+    --primary-color: #0000AA;
+    --secondary-color: #AA0000;
+    --dark-color: #000000;
+    --light-color: #FFFFFF;
+    --grey-color: #C0C0C0;
+    --background-color: #008080;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'MS Sans Serif', 'Segoe UI', sans-serif;
+    --body-font: 'MS Sans Serif', 'Segoe UI', sans-serif;
+    
+    /* Размеры и отступы */
+    --border-radius: 2px;
+    
+    /* Дополнительные цвета */
+    --window-bg: #C0C0C0;
+    --button-face: #C0C0C0;
+    --button-highlight: #FFFFFF;
+    --button-shadow: #808080;
+    --button-dkshadow: #000000;
+    --window-frame: #000080;
+    --taskbar-color: #C0C0C0;
+}
+
+/* Основные стили для эпохи 1990-х */
+.era-1990 {
+    background-color: var(--background-color);
+    color: var(--dark-color);
+    font-family: var(--body-font);
+    font-size: 12px;
+}
+
+/* Стилизация заголовков */
+.era-1990 h1, 
+.era-1990 h2, 
+.era-1990 h3, 
+.era-1990 h4, 
+.era-1990 h5, 
+.era-1990 h6 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.era-1990 h1 {
+    font-size: 18px;
+}
+
+.era-1990 h2 {
+    font-size: 16px;
+}
+
+.era-1990 h3 {
+    font-size: 14px;
+}
+
+/* Хедер - как окно Windows 95/98 */
+.era-1990 .site-header {
+    background-color: var(--window-bg);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    padding: 2px;
+}
+
+/* Логотип */
+.era-1990 .logo-symbol {
+    color: var(--window-frame);
+    font-weight: bold;
+}
+
+.era-1990 .logo-text {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+/* Меню - как меню Windows 95/98 */
+.era-1990 .hamburger-menu span {
+    background-color: var(--dark-color);
+}
+
+.era-1990 .main-nav {
+    background-color: var(--window-bg);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+}
+
+.era-1990 .main-nav a {
+    color: var(--dark-color);
+    padding: 4px 10px;
+    border-bottom: 1px solid var(--button-shadow);
+    display: block;
+}
+
+.era-1990 .main-nav a:hover,
+.era-1990 .main-nav a.active {
+    background-color: var(--window-frame);
+    color: var(--light-color);
+}
+
+/* Заголовок десятилетия - как окно программы */
+.era-1990 .decade-header {
+    background: var(--window-frame);
+    color: var(--light-color);
+    padding: 10px;
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    margin-bottom: 20px;
+}
+
+.era-1990 .decade-header::before {
+    background-color: transparent;
+}
+
+.era-1990 .decade-header h1 {
+    color: var(--light-color);
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 0 var(--dark-color);
+}
+
+.era-1990 .decade-header p {
+    color: var(--light-color);
+    font-size: 14px;
+}
+
+/* Основной контент - как рабочий стол Windows */
+.era-1990 .decade-content {
+    padding: 15px;
+    background-color: var(--background-color);
+}
+
+/* Секции - как окна программ Windows 95/98 */
+.era-1990 .decade-section {
+    background-color: var(--window-bg);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    margin-bottom: 20px;
+    padding: 2px;
+}
+
+.era-1990 .section-title {
+    background-color: var(--window-frame);
+    color: var(--light-color);
+    padding: 4px 10px;
+    text-align: left;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    position: relative;
+}
+
+.era-1990 .section-title::after {
+    display: none;
+}
+
+.era-1990 .context-content {
+    padding: 10px;
+}
+
+/* Карточки компьютеров - как вложенные окна */
+.era-1990 .computer-card {
+    background-color: var(--window-bg);
+    border-top: 1px solid var(--button-highlight);
+    border-left: 1px solid var(--button-highlight);
+    border-right: 1px solid var(--button-shadow);
+    border-bottom: 1px solid var(--button-shadow);
+    margin-bottom: 15px;
+    padding: 1px;
+}
+
+.era-1990 .computer-card h3 {
+    background-color: var(--window-frame);
+    color: var(--light-color);
+    padding: 4px 10px;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.era-1990 .computer-image {
+    border: 1px solid var(--button-shadow);
+    padding: 1px;
+    margin: 10px;
+    background-color: var(--light-color);
+}
+
+.era-1990 .computer-description {
+    padding: 0 10px 10px;
+    line-height: 1.5;
+}
+
+.era-1990 .computer-specs {
+    background-color: var(--light-color);
+    border-top: 1px solid var(--button-shadow);
+    border-left: 1px solid var(--button-shadow);
+    border-right: 1px solid var(--button-highlight);
+    border-bottom: 1px solid var(--button-highlight);
+    margin: 10px;
+    padding: 10px;
+}
+
+.era-1990 .computer-specs h4 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--button-shadow);
+    padding-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.era-1990 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.era-1990 .computer-specs th {
+    text-align: left;
+    padding: 3px 5px;
+    border-bottom: 1px solid var(--button-shadow);
+    font-weight: bold;
+    width: 35%;
+    color: var(--dark-color);
+}
+
+.era-1990 .computer-specs td {
+    padding: 3px 5px;
+    border-bottom: 1px solid var(--button-shadow);
+    color: var(--dark-color);
+}
+
+/* Личности */
+.era-1990 .personality-card {
+    background-color: var(--light-color);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.era-1990 .personality-card h3 {
+    color: var(--window-frame);
+    border-bottom: 1px solid var(--button-shadow);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Факты */
+.era-1990 .facts-list {
+    padding-left: 0;
+    margin: 10px;
+}
+
+.era-1990 .facts-list li {
+    background-color: var(--light-color);
+    border-top: 1px solid var(--button-shadow);
+    border-left: 1px solid var(--button-shadow);
+    border-right: 1px solid var(--button-highlight);
+    border-bottom: 1px solid var(--button-highlight);
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+    list-style-type: none;
+}
+
+.era-1990 .facts-list li::before {
+    content: '→';
+    position: absolute;
+    left: 2px;
+    top: 8px;
+    color: var(--window-frame);
+    font-weight: bold;
+}
+
+/* Навигация по эпохам - как кнопки Windows 95/98 */
+.era-1990 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.era-1990 .era-nav-button {
+    background-color: var(--button-face);
+    color: var(--dark-color);
+    padding: 5px 10px;
+    text-decoration: none;
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    font-family: var(--body-font);
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.era-1990 .era-nav-button:hover {
+    text-decoration: underline;
+}
+
+.era-1990 .era-nav-button:active {
+    border-top: 2px solid var(--button-dkshadow);
+    border-left: 2px solid var(--button-dkshadow);
+    border-right: 2px solid var(--button-highlight);
+    border-bottom: 2px solid var(--button-highlight);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+}
+
+/* Футер - как панель задач Windows 95/98 */
+.era-1990 .site-footer {
+    background-color: var(--taskbar-color);
+    color: var(--dark-color);
+    border-top: 2px solid var(--button-highlight);
+    padding: 5px 10px;
+}
+
+.era-1990 .footer-logo {
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.era-1990 .footer-links a {
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.era-1990 .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.era-1990 .copyright {
+    font-size: 11px;
+}
+
+/* Общие элементы интерфейса в стиле Windows 95/98 */
+.era-1990 button,
+.era-1990 .button {
+    background-color: var(--button-face);
+    color: var(--dark-color);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    padding: 5px 10px;
+    font-family: var(--body-font);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.era-1990 button:active,
+.era-1990 .button:active {
+    border-top: 2px solid var(--button-dkshadow);
+    border-left: 2px solid var(--button-dkshadow);
+    border-right: 2px solid var(--button-highlight);
+    border-bottom: 2px solid var(--button-highlight);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+}
+
+/* CTА-кнопка */
+.era-1990 .cta-button {
+    background-color: var(--button-face);
+    color: var(--dark-color);
+    border-top: 2px solid var(--button-highlight);
+    border-left: 2px solid var(--button-highlight);
+    border-right: 2px solid var(--button-dkshadow);
+    border-bottom: 2px solid var(--button-dkshadow);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+    padding: 8px 15px;
+    font-family: var(--body-font);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.era-1990 .cta-button:hover {
+    text-decoration: underline;
+}
+
+.era-1990 .cta-button:active {
+    border-top: 2px solid var(--button-dkshadow);
+    border-left: 2px solid var(--button-dkshadow);
+    border-right: 2px solid var(--button-highlight);
+    border-bottom: 2px solid var(--button-highlight);
+    box-shadow: 0 0 0 1px var(--button-shadow);
+}
+
+/* Списки */
+.era-1990 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.era-1990 li {
+    margin-bottom: 5px;
+}
+
+/* Ссылки */
+.era-1990 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.era-1990 a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность для разных устройств */
+@media (min-width: 576px) {
+    .era-1990 h1 {
+        font-size: 24px;
+    }
+    
+    .era-1990 .section-title {
+        font-size: 18px;
+    }
+    
+    .era-1990 .computer-card h3 {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-1990 .decade-header h1 {
+        font-size: 28px;
+    }
+    
+    .era-1990 .decade-header p {
+        font-size: 16px;
+    }
+    
+    .era-1990 .computer-specs table {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

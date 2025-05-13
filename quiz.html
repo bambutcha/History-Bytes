@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Проверьте свои знания о истории вычислительной техники в России">
+    <title>Квиз - Байты истории</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/quiz.css">
+    <!-- Фавиконка -->
+    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
+    <!-- OpenGraph теги -->
+    <meta property="og:title" content="Квиз - Байты истории">
+    <meta property="og:description" content="Проверьте свои знания о истории вычислительной техники в России">
+    <meta property="og:image" content="assets/images/ui/og-image.jpg">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Хедер с логотипом и меню -->
+        <header class="site-header">
+            <div class="logo-container">
+                <div class="logo" id="animated-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span class="logo-text">Байты истории</span>
+                </div>
+            </div>
+            <div class="hamburger-menu" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#timeline">Хронология</a></li>
+                    <li><a href="quiz.html" class="active">Квиз</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <section class="quiz-section">
+                <h1 class="main-title">Квиз "Угадай эпоху"</h1>
+                <p class="quiz-description">Проверьте свои знания о развитии вычислительной техники в России</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="progress-text">Вопрос <span id="current-question">1</span> из <span id="total-questions">10</span></div>
+                    </div>
+
+                    <div class="quiz-content">
+                        <div id="question-container">
+                            <!-- Вопросы будут добавлены через JavaScript -->
+                        </div>
+
+                        <div class="quiz-controls">
+                            <button id="prev-btn" class="quiz-btn" disabled>← Назад</button>
+                            <button id="next-btn" class="quiz-btn">Далее →</button>
+                        </div>
+                    </div>
+
+                    <div id="results" class="quiz-results hidden">
+                        <h2>Результаты</h2>
+                        <div class="score-container">
+                            <div class="score-circle">
+                                <span id="score">0</span>
+                                <span class="score-max">/10</span>
+                            </div>
+                            <p id="score-message"></p>
+                        </div>
+                        <div class="results-actions">
+                            <button id="restart-btn" class="quiz-btn">Начать заново</button>
+                            <a href="index.html" class="quiz-btn">На главную</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span>Байты истории</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="about.html#sources">Источники</a></li>
+                        <li><a href="about.html#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Байты истории. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/quiz.js"></script>
+</body>
+</html> 

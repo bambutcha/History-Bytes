@@ -1,0 +1,1157 @@
+/* Стили для эпохи 2020-х годов - Современный дизайн с элементами неоморфизма и стекломорфизма */
+
+:root {
+    /* Современная технологичная цветовая схема для 2020-х */
+    --primary-color: #2563eb;
+    --primary-light: #60a5fa;
+    --primary-dark: #1e40af;
+    --secondary-color: #7c3aed;
+    --secondary-light: #a78bfa;
+    --dark-color: #0f172a;
+    --light-color: #ffffff;
+    --grey-color: #f8fafc;
+    --background-color: #f1f5f9;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    
+    /* Размеры и отступы */
+    --border-radius: 12px;
+    --neomorphic-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --floating-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --glassmorphism: rgba(255, 255, 255, 0.8);
+    --blur-effect: blur(12px);
+    
+    /* Дополнительные цвета */
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
+    --info-color: #3b82f6;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --divider-color: #e2e8f0;
+    
+    /* Градиенты */
+    --gradient-primary: linear-gradient(135deg, #2563eb, #1e40af);
+    --gradient-secondary: linear-gradient(135deg, #7c3aed, #5b21b6);
+    --gradient-accent: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+/* Основные стили для эпохи 2020-х */
+.era-2020 {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.2px;
+}
+
+/* Типография */
+.era-2020 h1, 
+.era-2020 h2, 
+.era-2020 h3, 
+.era-2020 h4, 
+.era-2020 h5, 
+.era-2020 h6 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+.era-2020 h1 {
+    font-size: 48px;
+    letter-spacing: -1px;
+}
+
+.era-2020 h2 {
+    font-size: 36px;
+    letter-spacing: -0.5px;
+}
+
+.era-2020 h3 {
+    font-size: 28px;
+    letter-spacing: -0.3px;
+}
+
+.era-2020 h4 {
+    font-size: 22px;
+    letter-spacing: -0.2px;
+}
+
+.era-2020 p {
+    margin-bottom: 1.5rem;
+}
+
+/* Современный хедер со стекломорфизмом и микро-взаимодействиями */
+.era-2020 .site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    padding: 0 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    height: 64px;
+    max-width: 100%;
+}
+
+/* Добавляем отступ для основного контента, чтобы он не перекрывался с фиксированным хедером */
+.era-2020 .main-content {
+    padding-top: 64px;
+}
+
+/* Анимированный логотип */
+.era-2020 .logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.era-2020 .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.era-2020 .logo-symbol {
+    color: var(--primary-color);
+    font-size: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.era-2020 .logo:hover .logo-symbol {
+    transform: rotate(90deg) scale(1.2);
+}
+
+.era-2020 .logo-text {
+    color: rgb(15, 23, 42);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.3px;
+    position: relative;
+}
+
+.era-2020 .logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.era-2020 .logo:hover .logo-text::after {
+    width: 100%;
+}
+
+/* Гамбургер-меню */
+.era-2020 .hamburger-menu {
+    display: none; /* По умолчанию скрыто на десктопе */
+}
+
+/* Мобильное меню */
+@media (max-width: 991px) {
+    .era-2020 .hamburger-menu {
+        display: flex; /* Показываем только на мобильных */
+        width: 24px;
+        height: 18px;
+        position: relative;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 101;
+    }
+
+    .era-2020 .hamburger-menu span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--dark-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .era-2020 .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--primary-color);
+    }
+
+    .era-2020 .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    .era-2020 .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--primary-color);
+    }
+}
+
+/* Навигация */
+.era-2020 .main-nav {
+    display: flex;
+    margin-left: auto;
+    margin-right: 24px;
+    height: 100%;
+}
+
+.era-2020 .main-nav ul {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.era-2020 .main-nav ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.era-2020 .main-nav ul li a {
+    color: rgb(15, 23, 42);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    line-height: 1;
+    position: relative;
+}
+
+.era-2020 .main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d77fa1;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.era-2020 .main-nav ul li a:hover {
+    color: #d77fa1;
+}
+
+.era-2020 .main-nav ul li a:hover::after {
+    width: 80%;
+}
+
+.era-2020 .main-nav ul li a.active {
+    color: #d77fa1;
+    font-weight: 600;
+}
+
+.era-2020 .main-nav ul li a.active::after {
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .era-2020 .main-nav ul li a {
+        color: rgb(15, 23, 42);
+    }
+    
+    .era-2020 .main-nav ul li a:hover,
+    .era-2020 .main-nav ul li a.active {
+        color: #d77fa1;
+    }
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 576px) {
+    .era-2020 .site-header {
+        padding: 0 16px;
+    }
+
+    .era-2020 .logo-text {
+        font-size: 16px;
+    }
+
+    .era-2020 .main-nav {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+/* Современный заголовок с 3D эффектами и градиентами */
+.era-2020 .decade-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 120px 30px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.era-2020 .decade-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.1)' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.4;
+}
+
+.era-2020 .decade-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+.era-2020 .decade-header-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.era-2020 .decade-header h1 {
+    color: var(--light-color);
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: 64px;
+    letter-spacing: -1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out, float 6s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.era-2020 .decade-header p {
+    color: var(--light-color);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards, float 6s ease-in-out infinite 0.5s;
+}
+
+.era-2020 .decade-header p::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--light-color);
+    border-radius: 3px;
+}
+
+/* Основной контент - современный лейаут с воздушным пространством */
+.era-2020 .decade-content {
+    padding: 0 24px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Секции с современным дизайном */
+.era-2020 .decade-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding: 40px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.era-2020 .decade-section:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.era-2020 .section-title {
+    color: var(--dark-color);
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 40px 0;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.era-2020 .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-2020 .decade-section:hover .section-title::after {
+    transform: scaleX(1);
+}
+
+.era-2020 .context-content {
+    padding: 0;
+    line-height: 1.8;
+}
+
+/* Современные карточки с микровзаимодействиями */
+.era-2020 .computer-card {
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 20px;
+    margin: 40px 0;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.era-2020 .computer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.era-2020 .computer-card h3 {
+    color: var(--primary-dark);
+    margin: 0 0 25px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--divider-color);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: -0.5px;
+}
+
+.era-2020 .computer-image {
+    text-align: center;
+    margin: 30px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    background: linear-gradient(120deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.era-2020 .computer-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.era-2020 .computer-description {
+    margin-top: 30px;
+    line-height: 1.7;
+}
+
+/* Стилизация спецификаций компьютера - стекломорфизм */
+.era-2020 .computer-specs {
+    background-color: #f8fafc;
+    border-radius: 16px;
+    margin: 35px 0;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.era-2020 .computer-specs h4 {
+    color: var(--primary-dark);
+    margin: 0 0 25px 0;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.era-2020 .computer-specs h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.era-2020 .computer-specs table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+}
+
+.era-2020 .computer-specs th {
+    text-align: left;
+    padding: 18px 25px;
+    font-weight: 600;
+    width: 30%;
+    color: var(--primary-dark);
+    font-size: 16px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    vertical-align: top;
+    position: relative;
+}
+
+.era-2020 .computer-specs td {
+    padding: 18px 25px;
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.era-2020 .computer-specs tr:last-child th,
+.era-2020 .computer-specs tr:last-child td {
+    border-bottom: none;
+}
+
+.era-2020 .computer-specs tr:hover td,
+.era-2020 .computer-specs tr:hover th {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Карточки личностей - современный стекломорфный дизайн */
+.era-2020 .personality-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: var(--blur-effect);
+    -webkit-backdrop-filter: var(--blur-effect);
+    border-radius: var(--border-radius);
+    margin-bottom: 35px;
+    padding: 35px;
+    box-shadow: var(--neomorphic-shadow);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.era-2020 .personality-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--floating-shadow);
+}
+
+.era-2020 .personality-card h3 {
+    color: var(--primary-dark);
+    margin: 0 0 25px 0;
+    font-size: 24px;
+    font-weight: 800;
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: -0.3px;
+}
+
+.era-2020 .personality-card h3::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+.era-2020 .personality-card p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.era-2020 .personality-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Факты - современные карточки */
+.era-2020 .facts-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    gap: 25px;
+}
+
+.era-2020 .facts-list li {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 25px 25px 25px 70px;
+    position: relative;
+    box-shadow: var(--neomorphic-shadow);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+    border: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.era-2020 .facts-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--floating-shadow);
+}
+
+.era-2020 .facts-list li::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(108, 140, 191, 0.3);
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M12 22a10 10 0 100-20 10 10 0 000 20z"%3E%3C/path%3E%3Cpath d="M12 16v-4"%3E%3C/path%3E%3Cpath d="M12 8h.01"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Навигация по эпохам - современные кнопки */
+.era-2020 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0 30px;
+}
+
+.era-2020 .era-nav-button {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(229, 231, 235, 0.7);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.era-2020 .era-nav-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(215, 127, 161, 0.3);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.era-2020 .era-nav-button:hover {
+    background-color: rgba(140, 19, 65, 0.1);
+    color: #d77fa1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(215, 127, 161, 0.15);
+    border-color: rgba(134, 18, 62, 0.3);
+}
+
+.era-2020 .era-nav-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(215, 127, 161, 0.1);
+}
+
+.era-2020 .era-nav-button:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+.era-2020 .era-nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(215, 127, 161, 0.2);
+}
+
+.era-2020 .era-nav-button.prev::before {
+    content: '←';
+    font-size: 18px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-2020 .era-nav-button.next::after {
+    content: '→';
+    font-size: 18px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.era-2020 .era-nav-button.prev:hover::before {
+    transform: translateX(-4px);
+}
+
+.era-2020 .era-nav-button.next:hover::after {
+    transform: translateX(4px);
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Добавляем поддержку тёмной темы */
+@media (prefers-color-scheme: dark) {
+    .era-2020 .era-nav-button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .era-2020 .era-nav-button:hover {
+        background-color: rgba(215, 127, 161, 0.2);
+        color: #d77fa1;
+        border-color: rgba(215, 127, 161, 0.4);
+    }
+}
+
+/* Современный футер */
+.era-2020 .site-footer {
+    background: var(--dark-color);
+    color: var(--light-color);
+    padding: 60px 30px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.era-2020 .site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.era-2020 .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 40px;
+}
+
+.era-2020 .footer-logo {
+    color: var(--light-color);
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.era-2020 .footer-logo .logo-symbol {
+    background: linear-gradient(135deg, #95abd0, #d9e2f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.era-2020 .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.era-2020 .footer-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    font-weight: 500;
+    opacity: 0.8;
+    font-size: 15px;
+}
+
+.era-2020 .footer-links a:hover {
+    opacity: 1;
+    color: var(--primary-light);
+}
+
+.era-2020 .copyright {
+    margin-top: 40px;
+    font-size: 14px;
+    opacity: 0.6;
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Общие стили для элементов - неоморфный современный стиль */
+.era-2020 button,
+.era-2020 .button {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-family: var(--body-font);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--neomorphic-shadow);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.era-2020 button::before,
+.era-2020 .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.era-2020 button:hover,
+.era-2020 .button:hover {
+    color: var(--light-color);
+    transform: translateY(-3px);
+    box-shadow: var(--floating-shadow);
+    border-color: transparent;
+}
+
+.era-2020 button:hover::before,
+.era-2020 .button:hover::before {
+    opacity: 1;
+}
+
+.era-2020 button:active,
+.era-2020 .button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* CTА-кнопка - более современная и стильная */
+.era-2020 .cta-button {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 16px 36px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 30px;
+    box-shadow: var(--neomorphic-shadow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+.era-2020 .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.era-2020 .cta-button::after {
+    content: '→';
+    margin-left: 12px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.era-2020 .cta-button:hover {
+    color: var(--light-color);
+    transform: translateY(-3px);
+    box-shadow: var(--floating-shadow);
+    border-color: transparent;
+}
+
+.era-2020 .cta-button:hover::before {
+    opacity: 1;
+}
+
+.era-2020 .cta-button:hover::after {
+    transform: translateX(5px);
+}
+
+/* Списки */
+.era-2020 ul:not(.facts-list):not(.footer-links ul):not(.main-nav ul) {
+    list-style-type: none;
+    padding-left: 10px;
+    margin-bottom: 25px;
+}
+
+.era-2020 ul:not(.facts-list):not(.footer-links ul):not(.main-nav ul) li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.era-2020 ul:not(.facts-list):not(.footer-links ul):not(.main-nav ul) li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="%23FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="20 6 9 17 4 12"%3E%3C/polyline%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ссылки */
+.era-2020 a:not(.logo):not(.footer-links a):not(.era-nav-button):not(.cta-button):not(.main-nav a) {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+}
+
+.era-2020 a:not(.logo):not(.footer-links a):not(.era-nav-button):not(.cta-button):not(.main-nav a):hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+}
+
+/* Таблицы стилизация */
+.era-2020 table:not(.computer-specs table) {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 25px 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--neomorphic-shadow);
+    border: 1px solid var(--divider-color);
+}
+
+.era-2020 table:not(.computer-specs table) th {
+    background-color: var(--grey-color);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.era-2020 table:not(.computer-specs table) td {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.era-2020 table:not(.computer-specs table) tr:last-child td {
+    border-bottom: none;
+}
+
+.era-2020 table:not(.computer-specs table) tr:hover td {
+    background-color: var(--grey-color);
+}
+
+/* Адаптивность для разных устройств */
+@media (min-width: 576px) {
+    .era-2020 {
+        font-size: 17px;
+    }
+    
+    .era-2020 h1 {
+        font-size: 52px;
+    }
+    
+    .era-2020 h2 {
+        font-size: 36px;
+    }
+    
+    .era-2020 h3 {
+        font-size: 28px;
+    }
+    
+    .era-2020 .decade-header h1 {
+        font-size: 72px;
+    }
+    
+    .era-2020 .decade-header p {
+        font-size: 22px;
+    }
+    
+    .era-2020 .facts-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-2020 .decade-header {
+        padding: 140px 40px;
+    }
+    
+    .era-2020 .decade-header h1 {
+        font-size: 82px;
+    }
+    
+    .era-2020 .decade-header p {
+        font-size: 24px;
+    }
+    
+    .era-2020 .decade-section,
+    .era-2020 .computer-card,
+    .era-2020 .personality-card {
+        padding: 50px;
+    }
+    
+    .era-2020 .computer-specs {
+        padding: 40px;
+    }
+    
+    .era-2020 .computer-specs table {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .era-2020 .era-nav-button {
+        padding: 18px 35px;
+        font-size: 17px;
+    }
+    
+    .era-2020 .main-nav.active {
+        width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .era-2020 .hamburger-menu {
+        display: none;
+    }
+    
+    .era-2020 .main-nav {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        overflow: visible;
+        border: none;
+    }
+    
+    .era-2020 .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .era-2020 .main-nav a {
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-size: 15px;
+    }
+    
+    .era-2020 .main-nav a.active,
+    .era-2020 .main-nav a:hover {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,406 @@
+/* Стили для страницы симуляторов */
+
+.simulators-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.simulators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Общие стили для карточек симуляторов */
+.simulator-card {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.simulator-card:hover {
+    transform: translateY(-5px);
+}
+
+.simulator-header {
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.simulator-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.era-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+.simulator-content {
+    padding: 1rem;
+    min-height: 300px;
+    background: var(--bg-primary);
+}
+
+.simulator-info {
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Стили для терминального симулятора */
+.terminal-output {
+    background: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    padding: 1rem;
+    height: 250px;
+    overflow-y: auto;
+    margin-bottom: 0.5rem;
+}
+
+.terminal-input {
+    background: #000;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.command-line, .response-line {
+    margin: 0.25rem 0;
+    white-space: pre-wrap;
+}
+
+.prompt {
+    color: #0f0;
+    margin-right: 0.5rem;
+}
+
+/* Стили для DOS симулятора */
+.dos-window {
+    background: #000080;
+    color: #fff;
+    font-family: 'MS Sans Serif', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dos-header {
+    background: #000080;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #c0c0c0;
+}
+
+.dos-title {
+    font-weight: bold;
+}
+
+.dos-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dos-controls span {
+    cursor: pointer;
+    padding: 0 0.25rem;
+}
+
+.dos-output {
+    flex-grow: 1;
+    padding: 0.5rem;
+    overflow-y: auto;
+    background: #000;
+}
+
+.dos-input {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background: #000;
+}
+
+.dos-prompt {
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+.dos-command {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'MS Sans Serif', sans-serif;
+    flex-grow: 1;
+    outline: none;
+}
+
+/* Стили для Windows 3.1 симулятора */
+.simulator-content.windows-simulator {
+    padding: 0;
+    min-height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-primary);
+    overflow: auto;
+}
+
+.windows-desktop {
+    background: #008080;
+    width: 420px;
+    height: 340px;
+    border: 2px solid #808080;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.desktop-icons {
+    flex-grow: 1;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.desktop-icon {
+    width: 64px;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.desktop-icon img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.25rem;
+    image-rendering: pixelated;
+}
+
+.desktop-icon span {
+    color: #fff;
+    font-size: 0.85rem;
+    text-shadow: 1px 1px 1px #000;
+    margin-top: 0.1rem;
+}
+
+.taskbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 38px;
+    background: #c0c0c0;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    z-index: 10;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #c0c0c0;
+    padding: 0.15rem 0.7rem 0.15rem 0.4rem;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 28px;
+}
+
+.start-button img {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.2rem;
+}
+
+.taskbar-programs {
+    flex-grow: 1;
+    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    overflow-x: auto;
+}
+
+.taskbar-time {
+    background: #c0c0c0;
+    padding: 0.15rem 0.7rem;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    font-family: monospace;
+    font-size: 1rem;
+    min-width: 54px;
+    text-align: center;
+}
+
+/* Start menu поверх taskbar */
+.start-menu {
+    position: absolute;
+    left: 0;
+    bottom: 38px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    min-width: 180px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
+}
+
+.start-menu.active {
+    display: block;
+}
+
+.start-menu-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.start-menu-item:hover {
+    background: #000080;
+    color: #fff;
+}
+
+.start-menu-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Стили для программ */
+.notepad-content {
+    background: #fff;
+    border: 1px solid #808080;
+    padding: 0.5rem;
+    height: 100%;
+    font-family: 'MS Sans Serif', sans-serif;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25rem;
+    padding: 0.5rem;
+    background: #c0c0c0;
+}
+
+.calculator-display {
+    grid-column: 1 / -1;
+    background: #fff;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 0.25rem;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+.calculator button {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.calculator button:active {
+    border-color: #808080 #fff #fff #808080;
+}
+
+.paint-canvas {
+    background: #fff;
+    border: 1px solid #808080;
+    cursor: crosshair;
+}
+
+.paint-tools {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.paint-tool {
+    width: 24px;
+    height: 24px;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    cursor: pointer;
+}
+
+.paint-tool.active {
+    border-color: #808080 #fff #fff #808080;
+}
+
+/* Стили для панели задач */
+.taskbar-program {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.taskbar-program.active {
+    border-color: #fff #808080 #808080 #fff;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .simulators-section {
+        padding: 1rem;
+    }
+
+    .simulators-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simulator-content {
+        min-height: 250px;
+    }
+} 

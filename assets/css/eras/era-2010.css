@@ -1,0 +1,682 @@
+/* Стили для эпохи 2010-х годов - Material Design и современные тренды */
+
+:root {
+    /* Переопределяем цветовую схему для 2010-х */
+    --primary-color: #2196F3;
+    --primary-light: #BBDEFB;
+    --primary-dark: #1976D2;
+    --secondary-color: #FF4081;
+    --dark-color: #212121;
+    --light-color: #FFFFFF;
+    --grey-color: #F5F5F5;
+    --background-color: #FAFAFA;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    
+    /* Размеры и отступы */
+    --border-radius: 4px;
+    --card-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    --button-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    --hover-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+    /* Дополнительные цвета */
+    --accent-color: #FF4081;
+    --success-color: #4CAF50;
+    --warning-color: #FFC107;
+    --error-color: #F44336;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --divider-color: #BDBDBD;
+}
+
+/* Основные стили для эпохи 2010-х */
+.era-2010 {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    font-family: var(--body-font);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Стилизация заголовков */
+.era-2010 h1, 
+.era-2010 h2, 
+.era-2010 h3, 
+.era-2010 h4, 
+.era-2010 h5, 
+.era-2010 h6 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.era-2010 h1 {
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+.era-2010 h2 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.era-2010 h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.era-2010 h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Хедер - как Material Design App Bar */
+.era-2010 .site-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Логотип */
+.era-2010 .logo-symbol {
+    color: var(--light-color);
+    font-size: 24px;
+}
+
+.era-2010 .logo-text {
+    color: var(--light-color);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+}
+
+/* Меню - как мобильное меню в Material Design */
+.era-2010 .hamburger-menu span {
+    background-color: var(--light-color);
+    height: 2px;
+    transition: all 0.3s ease;
+}
+
+.era-2010 .main-nav {
+    background-color: var(--light-color);
+    border-radius: 0;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.era-2010 .main-nav ul {
+    padding: 0;
+}
+
+.era-2010 .main-nav a {
+    color: var(--text-primary);
+    padding: 16px 24px;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: background-color 0.3s, color 0.3s;
+    text-transform: uppercase;
+}
+
+.era-2010 .main-nav a:hover,
+.era-2010 .main-nav a.active {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+/* Заголовок десятилетия - как Hero Section в современном дизайне */
+.era-2010 .decade-header {
+    background: linear-gradient(45deg, #1976D2, #64B5F6);
+    color: var(--light-color);
+    padding: 80px 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.era-2010 .decade-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(225deg, rgba(255, 64, 129, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.era-2010 .decade-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.era-2010 .decade-header h1 {
+    color: var(--light-color);
+    margin-bottom: 15px;
+    font-weight: 300;
+    font-size: 48px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.era-2010 .decade-header p {
+    color: var(--light-color);
+    font-size: 20px;
+    opacity: 0.95;
+    font-weight: 400;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Основной контент */
+.era-2010 .decade-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Секции - как Material Design карточки */
+.era-2010 .decade-section {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.era-2010 .decade-section:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.era-2010 .section-title {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 16px 24px;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.era-2010 .section-title::after {
+    display: none;
+}
+
+.era-2010 .context-content {
+    padding: 24px;
+    line-height: 1.7;
+}
+
+/* Карточки компьютеров - в стиле Material Design */
+.era-2010 .computer-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    margin: 24px 0;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.era-2010 .computer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.era-2010 .computer-card h3 {
+    background-color: var(--primary-dark);
+    color: var(--light-color);
+    padding: 16px 24px;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.era-2010 .computer-image {
+    text-align: center;
+    padding: 24px;
+    background-color: var(--grey-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.era-2010 .computer-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0) 100%);
+    pointer-events: none;
+}
+
+.era-2010 .computer-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.era-2010 .computer-card:hover .computer-image img {
+    transform: scale(1.05);
+}
+
+.era-2010 .computer-description {
+    padding: 24px;
+    line-height: 1.6;
+}
+
+.era-2010 .computer-specs {
+    background-color: var(--grey-color);
+    margin: 0 24px 24px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.era-2010 .computer-specs h4 {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 12px 16px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.era-2010 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.era-2010 .computer-specs th {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--divider-color);
+    font-weight: 500;
+    width: 30%;
+    color: var(--primary-dark);
+    font-size: 14px;
+    letter-spacing: 0.01em;
+}
+
+.era-2010 .computer-specs td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--divider-color);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+/* Личности */
+.era-2010 .personality-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+}
+
+.era-2010 .personality-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--hover-shadow);
+}
+
+.era-2010 .personality-card h3 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Факты - со стильными иконками Material Design */
+.era-2010 .facts-list {
+    padding: 0;
+    margin: 24px;
+}
+
+.era-2010 .facts-list li {
+    background-color: var(--grey-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 16px;
+    padding: 16px 16px 16px 60px;
+    position: relative;
+    list-style-type: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+}
+
+.era-2010 .facts-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.era-2010 .facts-list li::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"%3E%3Cpath fill="%23FFFFFF" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Навигация по эпохам - как Material Design FAB */
+.era-2010 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 20px;
+}
+
+.era-2010 .era-nav-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 24px;
+    border-radius: 36px;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    box-shadow: var(--button-shadow);
+}
+
+.era-2010 .era-nav-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.era-2010 .era-nav-button:active {
+    transform: translateY(0);
+    box-shadow: var(--card-shadow);
+}
+
+.era-2010 .era-nav-button.prev::before {
+    content: '←';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.era-2010 .era-nav-button.next::after {
+    content: '→';
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+/* Футер - в стиле Material Design Footer */
+.era-2010 .site-footer {
+    background-color: var(--primary-dark);
+    color: var(--light-color);
+    padding: 50px 20px;
+    margin-top: 50px;
+}
+
+.era-2010 .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.era-2010 .footer-logo {
+    color: var(--light-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.era-2010 .footer-logo .logo-symbol {
+    margin-right: 10px;
+}
+
+.era-2010 .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.era-2010 .footer-links a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.era-2010 .footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--light-color);
+    transition: width 0.3s ease;
+}
+
+.era-2010 .footer-links a:hover {
+    opacity: 0.8;
+}
+
+.era-2010 .footer-links a:hover::after {
+    width: 100%;
+}
+
+.era-2010 .copyright {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* Общие стили для элементов - кнопки в стиле Material Design */
+.era-2010 button,
+.era-2010 .button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    font-family: var(--heading-font);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--button-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.era-2010 button::after,
+.era-2010 .button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.era-2010 button:hover,
+.era-2010 .button:hover {
+    background-color: var(--primary-dark);
+    box-shadow: var(--hover-shadow);
+}
+
+.era-2010 button:active::after,
+.era-2010 .button:active::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* CTА-кнопка - Floating Action Button */
+.era-2010 .cta-button {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    border: none;
+    padding: 16px 24px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.era-2010 .cta-button:hover {
+    background-color: #F50057;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 11px -2px rgba(0,0,0,0.2), 0 8px 20px 0 rgba(0,0,0,0.14), 0 3px 22px 0 rgba(0,0,0,0.12);
+}
+
+/* Списки - с Material Design иконками */
+.era-2010 ul:not(.facts-list) {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 24px;
+}
+
+.era-2010 ul:not(.facts-list) li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.era-2010 ul:not(.facts-list) li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"%3E%3Cpath fill="%23FFFFFF" d="M9,16.17L4.83,12l-1.42,1.41L9,19 21,7l-1.41-1.41L9,16.17z"%3E%3C/path%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 14px 14px;
+}
+
+/* Ссылки */
+.era-2010 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.era-2010 a:hover {
+    color: var(--primary-dark);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (min-width: 576px) {
+    .era-2010 {
+        font-size: 16px;
+    }
+    
+    .era-2010 h1 {
+        font-size: 42px;
+    }
+    
+    .era-2010 h2 {
+        font-size: 28px;
+    }
+    
+    .era-2010 h3 {
+        font-size: 22px;
+    }
+    
+    .era-2010 .decade-header h1 {
+        font-size: 56px;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-2010 .decade-header {
+        padding: 100px 40px;
+    }
+    
+    .era-2010 .decade-header h1 {
+        font-size: 64px;
+    }
+    
+    .era-2010 .decade-header p {
+        font-size: 24px;
+    }
+    
+    .era-2010 .computer-specs table {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .era-2010 .era-nav-button {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+}

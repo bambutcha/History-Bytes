@@ -1,0 +1,483 @@
+/* Стили для эпохи 2000-х годов - Windows XP эра */
+
+:root {
+    /* Переопределяем цветовую схему для Windows XP эпохи */
+    --primary-color: #245EDC;
+    --secondary-color: #FD7E00;
+    --dark-color: #0A246A;
+    --light-color: #FFFFFF;
+    --grey-color: #D4D0C8;
+    --background-color: #ECE9D8;
+    
+    /* Настройки шрифтов */
+    --heading-font: 'Tahoma', 'Verdana', sans-serif;
+    --body-font: 'Tahoma', 'Verdana', sans-serif;
+    
+    /* Размеры и отступы */
+    --border-radius: 3px;
+    
+    /* Дополнительные цвета */
+    --window-title-start: #0A246A;
+    --window-title-end: #A6CAF0;
+    --button-face: #ECE9D8;
+    --button-highlight: #FFFFFF;
+    --button-shadow: #ACA899;
+    --window-bg: #FFFFFF;
+    --xp-blue: #0054E3;
+    --xp-green: #36AD3F;
+    --xp-taskbar: #0055EA;
+}
+
+/* Основные стили для эпохи 2000-х */
+.era-2000 {
+    background-color: var(--background-color);
+    color: #000000;
+    font-family: var(--body-font);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Стилизация заголовков */
+.era-2000 h1, 
+.era-2000 h2, 
+.era-2000 h3, 
+.era-2000 h4, 
+.era-2000 h5, 
+.era-2000 h6 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.era-2000 h1 {
+    font-size: 18px;
+}
+
+.era-2000 h2 {
+    font-size: 14px;
+}
+
+.era-2000 h3 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Хедер - как верхняя панель окна Windows XP */
+.era-2000 .site-header {
+    background: linear-gradient(to right, var(--window-title-start), var(--window-title-end));
+    color: var(--light-color);
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--window-title-start);
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Логотип */
+.era-2000 .logo-symbol {
+    color: var(--light-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.era-2000 .logo-text {
+    color: var(--light-color);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Меню - как меню Windows XP */
+.era-2000 .hamburger-menu span {
+    background-color: var(--light-color);
+    height: 2px;
+}
+
+.era-2000 .main-nav {
+    background-color: var(--button-face);
+    border: 1px solid var(--button-shadow);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.era-2000 .main-nav a {
+    color: #000000;
+    padding: 5px 12px;
+    border-bottom: 1px solid var(--button-shadow);
+    display: block;
+    font-size: 11px;
+}
+
+.era-2000 .main-nav a:hover,
+.era-2000 .main-nav a.active {
+    background-color: var(--xp-blue);
+    color: var(--light-color);
+}
+
+/* Заголовок десятилетия - как заголовок программы Windows XP */
+.era-2000 .decade-header {
+    background: linear-gradient(to right, #3064BD, #84B5F2);
+    color: var(--light-color);
+    padding: 8px 15px;
+    margin-bottom: 15px;
+    border-radius: 7px 7px 0 0;
+    border: 1px solid #244C9D;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.era-2000 .decade-header::before {
+    background-color: transparent;
+}
+
+.era-2000 .decade-header h1 {
+    color: var(--light-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.era-2000 .decade-header p {
+    color: var(--light-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
+/* Основной контент - как рабочий стол Windows XP */
+.era-2000 .decade-content {
+    padding: 10px;
+    background-color: var(--background-color);
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23ECE9D8" /%3E%3C/svg%3E');
+}
+
+/* Секции - как окна программ Windows XP */
+.era-2000 .decade-section {
+    background-color: var(--window-bg);
+    border: 1px solid #919B9C;
+    border-radius: 7px 7px 3px 3px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.era-2000 .section-title {
+    background: linear-gradient(to right, #3064BD, #84B5F2);
+    color: white;
+    padding: 4px 10px;
+    font-size: 13px;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid #919B9C;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 6px 6px 0 0;
+}
+
+.era-2000 .section-title::after {
+    display: none;
+}
+
+.era-2000 .context-content {
+    padding: 10px;
+    line-height: 1.5;
+}
+
+/* Карточки компьютеров - как вложенные окна */
+.era-2000 .computer-card {
+    background-color: var(--window-bg);
+    border: 1px solid #919B9C;
+    margin: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.era-2000 .computer-card h3 {
+    background: linear-gradient(to right, #7BA2E7, #C2D9FF);
+    color: #000000;
+    padding: 5px 10px;
+    border-bottom: 1px solid #919B9C;
+    margin: 0;
+    font-size: 12px;
+}
+
+.era-2000 .computer-image {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--window-bg);
+    border-bottom: 1px solid #D4D0C8;
+}
+
+.era-2000 .computer-description {
+    padding: 10px;
+}
+
+.era-2000 .computer-specs {
+    background-color: #F5F5F5;
+    border: 1px solid #D4D0C8;
+    margin: 10px;
+}
+
+.era-2000 .computer-specs h4 {
+    background: linear-gradient(to bottom, #E3E3E3, #D9D9D9);
+    color: #000000;
+    padding: 4px 8px;
+    margin: 0;
+    border-bottom: 1px solid #D4D0C8;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.era-2000 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.era-2000 .computer-specs th {
+    text-align: left;
+    padding: 4px 8px;
+    border-bottom: 1px solid #D4D0C8;
+    font-weight: bold;
+    width: 30%;
+    background-color: #EFEFEF;
+    color: #000000;
+    font-size: 11px;
+}
+
+.era-2000 .computer-specs td {
+    padding: 4px 8px;
+    border-bottom: 1px solid #D4D0C8;
+    color: #000000;
+    font-size: 11px;
+}
+
+/* Личности */
+.era-2000 .personality-card {
+    background-color: var(--window-bg);
+    border: 1px solid #919B9C;
+    margin: 10px;
+    padding: 1px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.era-2000 .personality-card h3 {
+    background: linear-gradient(to right, #7BA2E7, #C2D9FF);
+    color: #000000;
+    padding: 5px 10px;
+    margin: 0;
+    border-bottom: 1px solid #919B9C;
+}
+
+.era-2000 .personality-card p {
+    padding: 10px;
+    margin: 0;
+}
+
+/* Факты */
+.era-2000 .facts-list {
+    padding: 5px 10px 10px 10px;
+    margin: 0;
+}
+
+.era-2000 .facts-list li {
+    background-color: #F5F5F5;
+    border: 1px solid #D4D0C8;
+    margin-bottom: 8px;
+    padding: 8px 8px 8px 28px;
+    position: relative;
+    list-style-type: none;
+}
+
+.era-2000 .facts-list li::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3Ccircle cx="8" cy="8" r="7" fill="%23FFCC00" stroke="%23FF6600" stroke-width="1"/%3E%3Ctext x="8" y="12" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="10" fill="%23000000"%3Ei%3C/text%3E%3C/svg%3E');
+}
+
+/* Навигация по эпохам - как кнопки Windows XP */
+.era-2000 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.era-2000 .era-nav-button {
+    background: linear-gradient(to bottom, #F6F6F6, #E4E4E4);
+    color: #000000;
+    padding: 3px 15px 3px 15px;
+    border: 1px solid #919B9C;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.era-2000 .era-nav-button:hover {
+    background: linear-gradient(to bottom, #E4E4E4, #CCCCCC);
+}
+
+.era-2000 .era-nav-button:active {
+    background: #CCCCCC;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Футер - как панель задач Windows XP */
+.era-2000 .site-footer {
+    background: linear-gradient(to bottom, #2182D9, #0054E3);
+    color: var(--light-color);
+    padding: 4px 10px;
+    border-top: 1px solid #000080;
+    font-size: 11px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.era-2000 .footer-content {
+    display: flex;
+    width: 100%;
+}
+
+.era-2000 .footer-logo {
+    color: var(--light-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    background: linear-gradient(to bottom, #3f8cf3, #0054E3);
+    border: 1px solid #044BDD;
+    border-radius: 2px;
+    height: 22px;
+    margin-right: 10px;
+}
+
+.era-2000 .footer-links {
+    flex-grow: 1;
+}
+
+.era-2000 .footer-links ul {
+    display: flex;
+    gap: 10px;
+}
+
+.era-2000 .footer-links a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.era-2000 .footer-links a:hover {
+    text-decoration: underline;
+}
+
+.era-2000 .copyright {
+    color: #DDEEFF;
+    font-size: 10px;
+}
+
+/* Общие стили для элементов */
+.era-2000 button,
+.era-2000 .button {
+    background: linear-gradient(to bottom, #F6F6F6, #E4E4E4);
+    color: #000000;
+    border: 1px solid #919B9C;
+    border-radius: 3px;
+    padding: 3px 12px;
+    font-family: var(--body-font);
+    font-size: 11px;
+    cursor: pointer;
+    height: 22px;
+}
+
+.era-2000 button:hover,
+.era-2000 .button:hover {
+    background: linear-gradient(to bottom, #E4E4E4, #CCCCCC);
+}
+
+.era-2000 button:active,
+.era-2000 .button:active {
+    background: #CCCCCC;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* CTА-кнопка */
+.era-2000 .cta-button {
+    background: linear-gradient(to bottom, #4DC742, #36AD3F);
+    color: white;
+    border: 1px solid #259622;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 3px;
+    height: auto;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.era-2000 .cta-button:hover {
+    background: linear-gradient(to bottom, #51D545, #3BBF43);
+}
+
+.era-2000 .cta-button:active {
+    background: #36AD3F;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Списки */
+.era-2000 ul:not(.facts-list) {
+    list-style-type: square;
+    padding-left: 25px;
+    margin: 10px 0;
+}
+
+.era-2000 ul:not(.facts-list) li {
+    margin-bottom: 5px;
+}
+
+/* Ссылки */
+.era-2000 a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+.era-2000 a:hover {
+    text-decoration: underline;
+}
+
+.era-2000 a:visited {
+    color: #800080;
+}
+
+/* Адаптивность для разных устройств */
+@media (min-width: 576px) {
+    .era-2000 h1 {
+        font-size: 22px;
+    }
+    
+    .era-2000 .section-title {
+        font-size: 15px;
+    }
+    
+    .era-2000 .computer-card h3 {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .era-2000 h1 {
+        font-size: 26px;
+    }
+    
+    .era-2000 .decade-header p {
+        font-size: 16px;
+    }
+    
+    .era-2000 .computer-specs table {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
