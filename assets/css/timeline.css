@@ -1,0 +1,212 @@
+/* Стили для временной шкалы */
+
+.timeline-container {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.timeline-scroll-indicator {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--grey-color);
+    font-size: 0.9rem;
+}
+
+.timeline-decades {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.timeline-decades::-webkit-scrollbar {
+    height: 6px;
+}
+
+.timeline-decades::-webkit-scrollbar-track {
+    background: var(--light-color);
+    border-radius: 10px;
+}
+
+.timeline-decades::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.decade-item {
+    flex: 0 0 200px;
+    height: 120px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.decade-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.decade-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.decade-item:hover::before {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.decade-year {
+    position: relative;
+    z-index: 2;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.decade-title {
+    position: relative;
+    z-index: 2;
+    font-size: 0.9rem;
+    max-width: 90%;
+}
+
+/* Уникальные стили для каждого десятилетия */
+.era-1950 {
+    background: linear-gradient(45deg, #2c3e50, #4ca1af);
+}
+
+.era-1960 {
+    background: linear-gradient(45deg, #3a1c71, #d76d77);
+}
+
+.era-1970 {
+    background: linear-gradient(45deg, #f46b45, #eea849);
+}
+
+.era-1980 {
+    background: linear-gradient(45deg, #005aa7, #fffde4);
+}
+
+.era-1990 {
+    background: linear-gradient(45deg, #673ab7, #512da8);
+}
+
+.era-2000 {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+}
+
+.era-2010 {
+    background: linear-gradient(45deg, #0b8793, #360033);
+}
+
+.era-2020 {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+/* Стили для отдельных страниц десятилетий */
+.decade-page {
+    position: relative;
+}
+
+.decade-header {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.decade-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.decade-header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.decade-header p {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.decade-content {
+    padding: 30px 20px;
+}
+
+.era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.era-nav-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.era-nav-button.prev::before {
+    content: '←';
+    margin-right: 8px;
+}
+
+.era-nav-button.next::after {
+    content: '→';
+    margin-left: 8px;
+}
+
+/* Медиа-запросы для временной шкалы */
+@media (min-width: 576px) {
+    .decade-item {
+        flex: 0 0 220px;
+        height: 140px;
+    }
+    
+    .decade-year {
+        font-size: 2rem;
+    }
+    
+    .decade-title {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .decade-header h1 {
+        font-size: 3rem;
+    }
+}
