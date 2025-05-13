@@ -1,0 +1,283 @@
+/* Стили для страницы 1950-х годов */
+
+/* Переопределяем основные переменные для эпохи */
+body.era-1950 {
+    --primary-color: #26733F;
+    --secondary-color: #A8E9C0;
+    --background-color: #011402;
+    --text-color: #A8E9C0;
+    --dark-color: #A8E9C0;
+    --light-color: #011402;
+    --border-radius: 0px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Стилизация текста в стиле ранних терминалов */
+body.era-1950 h1, 
+body.era-1950 h2, 
+body.era-1950 h3, 
+body.era-1950 h4, 
+body.era-1950 h5, 
+body.era-1950 h6 {
+    font-family: 'VT323', monospace;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+body.era-1950 p, 
+body.era-1950 li, 
+body.era-1950 a {
+    font-family: 'VT323', monospace;
+    line-height: 1.4;
+}
+
+/* Стилизация хедера */
+body.era-1950 .site-header {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--text-color);
+    box-shadow: none;
+}
+
+body.era-1950 .logo-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+body.era-1950 .hamburger-menu span {
+    background-color: var(--text-color);
+}
+
+/* Стилизация основного контента */
+body.era-1950 .main-content {
+    padding: 20px;
+}
+
+/* Стилизация заголовка десятилетия */
+body.era-1950 .decade-header {
+    background-color: var(--background-color);
+    background-image: 
+        linear-gradient(rgba(38, 115, 63, 0.3), rgba(38, 115, 63, 0.3)),
+        url('../images/decades/1950s-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 20px;
+    position: relative;
+    text-align: center;
+}
+
+body.era-1950 .decade-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        rgba(1, 20, 2, 0.9) 0%, 
+        rgba(1, 20, 2, 0.6) 50%, 
+        rgba(1, 20, 2, 0.9) 100%
+    );
+    z-index: 1;
+}
+
+body.era-1950 .decade-header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(168, 233, 192, 0.5);
+}
+
+body.era-1950 .decade-header p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Стилизация секций */
+body.era-1950 .decade-section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border: 1px solid var(--text-color);
+    position: relative;
+}
+
+body.era-1950 .decade-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg, 
+        rgba(38, 115, 63, 0.1) 0%, 
+        rgba(1, 20, 2, 0.05) 100%
+    );
+    z-index: -1;
+}
+
+body.era-1950 .section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--text-color);
+}
+
+body.era-1950 .section-title::after {
+    content: none;
+}
+
+/* Стилизация карточек */
+body.era-1950 .computer-card {
+    margin-bottom: 2rem;
+    border: 1px solid var(--text-color);
+    padding: 1rem;
+}
+
+body.era-1950 .computer-card h3 {
+    border-bottom: 1px dashed var(--text-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+body.era-1950 .computer-image {
+    border: 1px solid var(--text-color);
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+body.era-1950 .computer-specs {
+    margin-top: 1rem;
+    font-family: 'VT323', monospace;
+}
+
+body.era-1950 .computer-specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+body.era-1950 .computer-specs th, 
+body.era-1950 .computer-specs td {
+    padding: 0.5rem;
+    border-bottom: 1px dotted var(--text-color);
+}
+
+body.era-1950 .computer-specs th {
+    text-align: left;
+    color: var(--secondary-color);
+}
+
+/* Стилизация кнопок и интерактивных элементов */
+body.era-1950 .btn-1950,
+body.era-1950 button,
+body.era-1950 .button,
+body.era-1950 .cta-button,
+body.era-1950 input[type="button"] {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    padding: 10px 20px;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.era-1950 .btn-1950:hover,
+body.era-1950 button:hover,
+body.era-1950 .button:hover,
+body.era-1950 .cta-button:hover,
+body.era-1950 input[type="button"]:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Терминальный курсор */
+body.era-1950 .terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: var(--text-color);
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Стилизация футера */
+body.era-1950 .site-footer {
+    background-color: var(--background-color);
+    border-top: 1px solid var(--text-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+}
+
+body.era-1950 .footer-links a {
+    color: var(--text-color);
+    border-bottom: 1px dotted var(--text-color);
+    transition: all 0.3s ease;
+}
+
+body.era-1950 .footer-links a:hover {
+    border-bottom: 1px solid var(--text-color);
+    color: var(--secondary-color);
+}
+
+/* Стилизация хронологии (временной шкалы) */
+body.era-1950 .era-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+body.era-1950 .era-nav-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+body.era-1950 .era-nav-button:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 767px) {
+    body.era-1950 .decade-header h1 {
+        font-size: 2rem;
+    }
+    
+    body.era-1950 .section-title {
+        font-size: 1.5rem;
+    }
+    
+    body.era-1950 .computer-specs th, 
+    body.era-1950 .computer-specs td {
+        padding: 0.3rem;
+        font-size: 0.9rem;
+    }
+}

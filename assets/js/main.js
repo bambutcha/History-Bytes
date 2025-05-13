@@ -76,14 +76,16 @@ function initAnimations() {
     };
     
     // Создаем и запускаем observer
-    const observer = new IntersectionObserver(handleIntersection, options);
-    
-    animatedElements.forEach(element => {
-        // Сначала скрываем все анимируемые элементы
-        element.style.opacity = '0';
-        // Начинаем наблюдать за элементами
-        observer.observe(element);
-    });
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(handleIntersection, options);
+        
+        animatedElements.forEach(element => {
+            // НЕ скрываем элементы, чтобы избежать мигания/исчезновения
+            // element.style.opacity = '0';
+            // Начинаем наблюдать за элементами
+            observer.observe(element);
+        });
+    }
 }
 
 // Обнаружение прокрутки для эффектов и анимаций
