@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Машина времени - сравнение технологий разных эпох в истории ЭВМ в России">
+    <title>Машина времени | Байты истории</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+    <!-- Фавиконка -->
+    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
+    <style>
+        /* Стили для машины времени */
+        .time-machine {
+            padding: 2rem 0;
+        }
+        
+        .tm-controls {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .era-selector {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            background-color: var(--light-color);
+            cursor: pointer;
+        }
+        
+        .comparison-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .comparison-category {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+        }
+        
+        .comparison-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--grey-color);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        .old-value {
+            color: var(--grey-color);
+        }
+        
+        .current-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .diff-indicator {
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Хедер с логотипом и меню -->
+        <header class="site-header">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span class="logo-text">Байты истории</span>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#timeline">Хронология</a></li>
+                    <li><a href="quiz.html">Квиз</a></li>
+                    <li><a href="about.html">О проекте</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <section class="hero-section">
+                <h1 class="main-title">Машина времени</h1>
+                <p class="subtitle">Сравнение технологий разных эпох</p>
+                <div class="description">
+                    <p>Наблюдайте эволюцию вычислительной техники в СССР и России с 1950-х по 2020-е годы. Выберите интересующее вас десятилетие и сравните его технологии с начальным этапом развития ЭВМ.</p>
+                </div>
+            </section>
+
+            <section class="time-machine">
+                <div class="tm-controls">
+                    <label for="era-select">Выберите десятилетие для сравнения с 1950-ми:</label>
+                    <select id="era-select" class="era-selector">
+                        <option value="1960">1960-е</option>
+                        <option value="1970">1970-е</option>
+                        <option value="1980">1980-е</option>
+                        <option value="1990">1990-е</option>
+                        <option value="2000">2000-е</option>
+                        <option value="2010">2010-е</option>
+                        <option value="2020" selected>2020-е</option>
+                    </select>
+                </div>
+                
+                <div class="comparison-container">
+                    <!-- Контент будет добавлен динамически через JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span>Байты истории</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="about.html">О проекте</a></li>
+                        <li><a href="about.html#sources">Источники</a></li>
+                        <li><a href="about.html#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Байты истории. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/timeline.js"></script>
+</body>
+</html>
