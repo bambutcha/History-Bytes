@@ -42,17 +42,57 @@ function initTimelineScroll() {
         timeline.scrollLeft = scrollLeft - walk;
     });
     
-    // Обработка скролла колесиком мыши для горизонтальной прокрутки
+    // Улучшенная обработка скролла колесиком мыши и тачпадов для горизонтальной прокрутки
     timeline.addEventListener('wheel', (e) => {
         e.preventDefault();
-        timeline.scrollLeft += e.deltaY;
-    });
+        
+        // Если зажата клавиша Shift или используется тачпад с горизонтальной прокруткой
+        if (e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            timeline.scrollLeft += e.deltaX || e.deltaY;
+        } else {
+            // Обычное колесико мыши (вертикальное) - переводим в горизонтальную прокрутку
+            timeline.scrollLeft += e.deltaY;
+        }
+    }, { passive: false }); // passive: false для предотвращения стандартной прокрутки страницы
+    
+    // Добавление поддержки свайпов для тачпадов и тачскринов
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    timeline.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    timeline.addEventListener('touchmove', (e) => {
+        if (!touchStartX || !touchStartY) return;
+        
+        const touchEndX = e.touches[0].clientX;
+        const touchEndY = e.touches[0].clientY;
+        
+        const deltaX = touchStartX - touchEndX;
+        const deltaY = touchStartY - touchEndY;
+        
+        // Если горизонтальное движение больше вертикального, то это свайп
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            e.preventDefault(); // Предотвращаем стандартную прокрутку страницы
+            timeline.scrollLeft += deltaX;
+            touchStartX = touchEndX;
+            touchStartY = touchEndY;
+        }
+    }, { passive: false });
+    
+    timeline.addEventListener('touchend', () => {
+        touchStartX = 0;
+        touchStartY = 0;
+    }, { passive: true });
     
     // Показываем/скрываем индикатор прокрутки
     const scrollIndicator = document.querySelector('.timeline-scroll-indicator');
     
     if (scrollIndicator) {
-        // Скрываем индикатор после первого скролла
+        // НЕ скрываем индикатор после первого скролла - оставляем его видимым
+        /*
         timeline.addEventListener('scroll', () => {
             if (timeline.scrollLeft > 20) {
                 scrollIndicator.style.opacity = '0';
@@ -76,6 +116,7 @@ function initTimelineScroll() {
                 scrollIndicator.style.display = 'none';
             }, 500);
         });
+        */
     }
 }
 
