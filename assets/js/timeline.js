@@ -58,33 +58,76 @@ function initTimelineScroll() {
     // Добавление поддержки свайпов для тачпадов и тачскринов
     let touchStartX = 0;
     let touchStartY = 0;
+    let lastTouchX = 0;
+    let isScrolling = false;
+    let scrollVelocity = 0;
+    let lastTimestamp = 0;
     
     timeline.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
+        lastTouchX = touchStartX;
+        isScrolling = true;
+        scrollVelocity = 0;
+        lastTimestamp = Date.now();
     }, { passive: true });
     
     timeline.addEventListener('touchmove', (e) => {
-        if (!touchStartX || !touchStartY) return;
+        if (!isScrolling) return;
         
-        const touchEndX = e.touches[0].clientX;
-        const touchEndY = e.touches[0].clientY;
+        const currentTouchX = e.touches[0].clientX;
+        const currentTouchY = e.touches[0].clientY;
+        const currentTimestamp = Date.now();
         
-        const deltaX = touchStartX - touchEndX;
-        const deltaY = touchStartY - touchEndY;
+        const deltaX = lastTouchX - currentTouchX;
+        const deltaY = touchStartY - currentTouchY;
+        const deltaTime = currentTimestamp - lastTimestamp;
         
         // Если горизонтальное движение больше вертикального, то это свайп
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            e.preventDefault(); // Предотвращаем стандартную прокрутку страницы
-            timeline.scrollLeft += deltaX * 1.5; // Увеличиваем чувствительность свайпа
-            touchStartX = touchEndX;
-            touchStartY = touchEndY;
+            e.preventDefault();
+            
+            // Вычисляем скорость прокрутки
+            scrollVelocity = deltaX / deltaTime;
+            
+            // Плавно прокручиваем с учетом скорости
+            timeline.scrollLeft += deltaX * 0.5;
+            
+            lastTouchX = currentTouchX;
+            lastTimestamp = currentTimestamp;
         }
     }, { passive: false });
     
     timeline.addEventListener('touchend', () => {
+        if (!isScrolling) return;
+        
+        // Добавляем инерцию после отпускания
+        let inertia = scrollVelocity * 1000; // Умножаем на 1000 для более заметного эффекта
+        let lastScrollLeft = timeline.scrollLeft;
+        
+        const animateInertia = () => {
+            if (Math.abs(inertia) < 0.1) return;
+            
+            timeline.scrollLeft += inertia;
+            inertia *= 0.95; // Замедление
+            
+            // Проверяем, не достигли ли мы края
+            if (timeline.scrollLeft === lastScrollLeft) {
+                return;
+            }
+            
+            lastScrollLeft = timeline.scrollLeft;
+            requestAnimationFrame(animateInertia);
+        };
+        
+        requestAnimationFrame(animateInertia);
+        
+        // Сбрасываем состояние
+        isScrolling = false;
         touchStartX = 0;
         touchStartY = 0;
+        lastTouchX = 0;
+        scrollVelocity = 0;
     }, { passive: true });
     
     // Показываем/скрываем индикатор прокрутки
@@ -92,7 +135,6 @@ function initTimelineScroll() {
     
     if (scrollIndicator) {
         // НЕ скрываем индикатор после первого скролла - оставляем его видимым
-        /*
         timeline.addEventListener('scroll', () => {
             if (timeline.scrollLeft > 20) {
                 scrollIndicator.style.opacity = '0';
@@ -116,7 +158,6 @@ function initTimelineScroll() {
                 scrollIndicator.style.display = 'none';
             }, 500);
         });
-        */
     }
 }
 
