@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Эльбрус - современный российский процессор с собственной архитектурой">
+    <title>Эльбрус | Байты истории</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/timeline.css">
+    <link rel="stylesheet" href="../assets/css/eras/era-2000.css">
+    <!-- Фавиконка -->
+    <link rel="icon" type="image/png" href="../assets/images/ui/favicon.png">
+    <!-- Специальные шрифты для эпохи 2000-х -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap">
+</head>
+<body class="era-2000 computer-page">
+    <div class="app-container">
+        <!-- Хедер с логотипом и меню -->
+        <header class="site-header">
+            <div class="logo-container">
+                <a href="../index.html" class="logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span class="logo-text">Байты истории</span>
+                </a>
+            </div>
+            <div class="hamburger-menu" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-navigation">
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#timeline">Хронология</a></li>
+                    <li><a href="../quiz.html">Квиз</a></li>
+                    <li><a href="../about.html">О проекте</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Hero секция с 3D эффектом -->
+            <section class="processor-hero">
+                <div class="hero-background">
+                    <div class="circuit-pattern"></div>
+                    <div class="floating-elements">
+                        <div class="float-element" style="--delay: 0s; --x: 20%; --y: 30%;"></div>
+                        <div class="float-element" style="--delay: 2s; --x: 80%; --y: 60%;"></div>
+                        <div class="float-element" style="--delay: 4s; --x: 60%; --y: 20%;"></div>
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <div class="processor-visualization">
+                        <div class="chip-container">
+                            <div class="chip-body">
+                                <div class="chip-logo">ЭЛЬБРУС</div>
+                                <div class="chip-grid">
+                                    <div class="core-block active" data-core="1"></div>
+                                    <div class="core-block active" data-core="2"></div>
+                                    <div class="core-block active" data-core="3"></div>
+                                    <div class="core-block active" data-core="4"></div>
+                                </div>
+                                <div class="chip-pins">
+                                    <div class="pin-row top"></div>
+                                    <div class="pin-row bottom"></div>
+                                    <div class="pin-row left"></div>
+                                    <div class="pin-row right"></div>
+                                </div>
+                            </div>
+                            <div class="heat-sink"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-info">
+                        <h1 class="hero-title">ЭЛЬБРУС</h1>
+                        <div class="hero-subtitle">Российский микропроцессор</div>
+                        <div class="hero-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Архитектура:</span>
+                                <span class="spec-value">VLIW (E2K)</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Техпроцесс:</span>
+                                <span class="spec-value">16-90 нм</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Совместимость:</span>
+                                <span class="spec-value">x86, x86-64</span>
+                            </div>
+                        </div>
+                        <div class="hero-description">
+                            <p>Семейство отечественных микропроцессоров с уникальной VLIW-архитектурой, обеспечивающих технологическую независимость России в сфере вычислительной техники</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Эволюция линейки -->
+            <section class="evolution-section">
+                <h2 class="section-title">Эволюция процессоров Эльбрус</h2>
+                <div class="evolution-timeline">
+                    <div class="evolution-track"></div>
+                    
+                    <div class="evolution-item" data-year="2005">
+                        <div class="evolution-chip">
+                            <div class="chip-mini e2k"></div>
+                            <div class="chip-info">
+                                <h3>Эльбрус-2000</h3>
+                                <p>300-500 МГц • VLIW • 130 нм</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-item" data-year="2010">
+                        <div class="evolution-chip">
+                            <div class="chip-mini e4c"></div>
+                            <div class="chip-info">
+                                <h3>Эльбрус-4C</h3>
+                                <p>800 МГц • 4 ядра • 65 нм</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-item" data-year="2014">
+                        <div class="evolution-chip">
+                            <div class="chip-mini e8c"></div>
+                            <div class="chip-info">
+                                <h3>Эльбрус-8C</h3>
+                                <p>1.3 ГГц • 8 ядер • 28 нм</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-item" data-year="2019">
+                        <div class="evolution-chip">
+                            <div class="chip-mini e8cb"></div>
+                            <div class="chip-info">
+                                <h3>Эльбрус-8CB</h3>
+                                <p>1.5 ГГц • 8 ядер • 28 нм</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="evolution-item" data-year="2021">
+                        <div class="evolution-chip">
+                            <div class="chip-mini e16c"></div>
+                            <div class="chip-info">
+                                <h3>Эльбрус-16C</h3>
+                                <p>2.0 ГГц • 16 ядер • 16 нм</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VLIW Architecture Explanation -->
+            <section class="vliw-section">
+                <h2 class="section-title">Архитектура VLIW (Very Long Instruction Word)</h2>
+                <div class="vliw-container">
+                    <div class="instruction-demo">
+                        <h3>Традиционная архитектура</h3>
+                        <div class="instruction-flow traditional">
+                            <div class="instruction">ADD</div>
+                            <div class="instruction">MUL</div>
+                            <div class="instruction">LOAD</div>
+                            <div class="instruction">STORE</div>
+                        </div>
+                        <div class="flow-label">Последовательное выполнение</div>
+                    </div>
+                    
+                    <div class="vs-divider">VS</div>
+                    
+                    <div class="instruction-demo">
+                        <h3>VLIW Эльбрус</h3>
+                        <div class="instruction-flow vliw">
+                            <div class="vliw-packet">
+                                <div class="instruction parallel">ADD</div>
+                                <div class="instruction parallel">MUL</div>
+                                <div class="instruction parallel">LOAD</div>
+                                <div class="instruction parallel">STORE</div>
+                            </div>
+                        </div>
+                        <div class="flow-label">Параллельное выполнение</div>
+                    </div>
+                </div>
+                
+                <div class="vliw-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h4>Высокая производительность</h4>
+                        <p>Одновременное выполнение нескольких операций в одном такте</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🔧</div>
+                        <h4>Эффективность компилятора</h4>
+                        <p>Оптимизация на этапе компиляции вместо аппаратных решений</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💡</div>
+                        <h4>Энергоэффективность</h4>
+                        <p>Меньше транзисторов для управляющей логики</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Binary Translation -->
+            <section class="translation-section">
+                <h2 class="section-title">Технология бинарной трансляции</h2>
+                <div class="translation-demo">
+                    <div class="source-code">
+                        <h3>x86/x86-64 код</h3>
+                        <div class="code-block">
+                            <div class="code-line">MOV EAX, [EBX]</div>
+                            <div class="code-line">ADD EAX, ECX</div>
+                            <div class="code-line">MUL EDX</div>
+                            <div class="code-line">MOV [ESI], EAX</div>
+                        </div>
+                    </div>
+                    
+                    <div class="translation-arrow">
+                        <div class="arrow-body">
+                            <span>Бинарная трансляция</span>
+                        </div>
+                        <div class="arrow-head">→</div>
+                    </div>
+                    
+                    <div class="target-code">
+                        <h3>E2K VLIW код</h3>
+                        <div class="code-block e2k">
+                            <div class="code-packet">
+                                <div class="code-line">LOAD r1, [r2]</div>
+                                <div class="code-line">ADD r3, r1, r4</div>
+                                <div class="code-line">MUL r5, r3, r6</div>
+                                <div class="code-line">STORE [r7], r5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="translation-stats">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">% совместимость с x86</div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">x производительность</div>
+                    </div>
+                    
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="0">0</div>
+                        <div class="stat-label">% накладных расходов</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications -->
+            <section class="applications-section">
+                <h2 class="section-title">Области применения</h2>
+                <div class="applications-grid">
+                    <div class="app-card defense">
+                        <div class="app-icon">🛡️</div>
+                        <h3>Оборона и безопасность</h3>
+                        <ul>
+                            <li>Системы ПВО и ПРО</li>
+                            <li>Военные вычислительные комплексы</li>
+                            <li>Защищенные коммуникации</li>
+                            <li>Криптографические системы</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="app-card government">
+                        <div class="app-icon">🏛️</div>
+                        <h3>Государственное управление</h3>
+                        <ul>
+                            <li>Системы электронного документооборота</li>
+                            <li>Центры обработки данных</li>
+                            <li>Информационные системы ведомств</li>
+                            <li>Системы критической инфраструктуры</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="app-card science">
+                        <div class="app-icon">🔬</div>
+                        <h3>Наука и образование</h3>
+                        <ul>
+                            <li>Суперкомпьютеры и кластеры</li>
+                            <li>Научные вычисления</li>
+                            <li>Моделирование и симуляции</li>
+                            <li>Исследовательские центры</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="app-card industry">
+                        <div class="app-icon">🏭</div>
+                        <h3>Промышленность</h3>
+                        <ul>
+                            <li>Системы автоматизации производства</li>
+                            <li>SCADA системы</li>
+                            <li>Промышленные контроллеры</li>
+                            <li>Энергетические системы</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison with global processors -->
+            <section class="comparison-section">
+                <h2 class="section-title">Сравнение с мировыми аналогами</h2>
+                <div class="comparison-table">
+                    <div class="table-header">
+                        <div class="header-cell">Характеристика</div>
+                        <div class="header-cell highlight">Эльбрус-8C</div>
+                        <div class="header-cell">Intel i7-4770</div>
+                        <div class="header-cell">AMD FX-8350</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="cell">Архитектура</div>
+                        <div class="cell highlight">VLIW (E2K)</div>
+                        <div class="cell">x86-64</div>
+                        <div class="cell">x86-64</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="cell">Ядер/Потоков</div>
+                        <div class="cell highlight">8/8</div>
+                        <div class="cell">4/8</div>
+                        <div class="cell">8/8</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="cell">Частота (ГГц)</div>
+                        <div class="cell highlight">1.3</div>
+                        <div class="cell">3.4</div>
+                        <div class="cell">4.0</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="cell">Техпроцесс (нм)</div>
+                        <div class="cell highlight">28</div>
+                        <div class="cell">22</div>
+                        <div class="cell">32</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="cell">Безопасность</div>
+                        <div class="cell highlight">Максимальная</div>
+                        <div class="cell">Стандартная</div>
+                        <div class="cell">Стандартная</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future roadmap -->
+            <section class="roadmap-section">
+                <h2 class="section-title">Дорожная карта развития</h2>
+                <div class="roadmap-container">
+                    <div class="roadmap-item completed" data-status="completed">
+                        <div class="roadmap-year">2020-2025</div>
+                        <div class="roadmap-content">
+                            <h3>Текущее поколение</h3>
+                            <p>Эльбрус-16C, оптимизация производства, расширение применения</p>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item active" data-status="active">
+                        <div class="roadmap-year">2025-2030</div>
+                        <div class="roadmap-content">
+                            <h3>Следующее поколение</h3>
+                            <p>Переход на 7-10 нм технологии, увеличение частот до 3+ ГГц</p>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item future" data-status="future">
+                        <div class="roadmap-year">2030+</div>
+                        <div class="roadmap-content">
+                            <h3>Будущие разработки</h3>
+                            <p>Интеграция ИИ-ускорителей, квантовые вычисления, 3 нм</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <div class="computer-navigation">
+                <a href="../computers/index.html" class="nav-button back">
+                    ← Каталог компьютеров
+                </a>
+                <a href="../decades/2000s.html" class="nav-button next">
+                    2000-е годы →
+                </a>
+            </div>
+        </main>
+
+        <!-- Футер -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-symbol">⌘</span>
+                    <span>Байты истории</span>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../about.html">О проекте</a></li>
+                        <li><a href="../about.html#sources">Источники</a></li>
+                        <li><a href="../about.html#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Байты истории. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/timeline.js"></script>
+
+    <style>
+        /* Специальные стили для страницы Эльбрус в стиле 2000-х */
+        .era-2000 {
+            background: linear-gradient(135deg, #ECECEC 0%, #D4D4D4 100%);
+            color: #333333;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .processor-hero {
+            position: relative;
+            margin: 40px 0;
+            background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circuit-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: circuitMove 20s linear infinite;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .float-element {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            left: var(--x);
+            top: var(--y);
+            animation: float 6s ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Processor Visualization */
+        .processor-visualization {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chip-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .chip-body {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.2);
+            transform: rotateX(15deg) rotateY(-15deg);
+        }
+
+        .chip-logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .chip-grid {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .core-block {
+            width: 30px;
+            height: 30px;
+            background-color: #34495e;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .core-block.active::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, #3498db, transparent);
+            animation: coreActivity 2s ease-in-out infinite;
+            animation-delay: calc(var(--core, 1) * 0.5s);
+        }
+
+        .chip-pins {
+            position: absolute;
+        }
+
+        .pin-row {
+            position: absolute;
+            background-color: #95a5a6;
+        }
+
+        .pin-row.top,
+        .pin-row.bottom {
+            width: 80%;
+            height: 4px;
+            left: 10%;
+        }
+
+        .pin-row.top { top: -2px; }
+        .pin-row.bottom { bottom: -2px; }
+
+        .pin-row.left,
+        .pin-row.right {
+            width: 4px;
+            height: 80%;
+            top: 10%;
+        }
+
+        .pin-row.left { left: -2px; }
+        .pin-row.right { right: -2px; }
+
+        .heat-sink {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 30px;
+            background: linear-gradient(135deg, #bdc3c7, #ecf0f1);
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .heat-sink::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #95a5a6 0px,
+                #95a5a6 2px,
+                transparent 2px,
+                transparent 6px
+            );
+        }
+
+        /* Hero Info */
+        .hero-info {
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-specs {
+            margin-bottom: 30px;
+        }
+
+        .spec-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .spec-value {
+            color: #ecf0f1;
+            font-weight: bold;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Evolution Timeline */
+        .evolution-section {
+            margin: 80px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .evolution-timeline {
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .evolution-track {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+            transform: translateY(-50%);
+        }
+
+        .evolution-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .evolution-item::before {
+            content: attr(data-year);
+            position: absolute;
+            top: -30px;
+            font-weight: bold;
+            color: #3498db;
+            font-size: 14px;
+        }
+
+        .evolution-chip {
+            background: white;
+            border: 3px solid #3498db;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(52, 152, 219, 0.2);
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .chip-mini {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin: 0 auto 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chip-mini.e2k { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .chip-mini.e4c { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        .chip-mini.e8c { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .chip-mini.e8cb { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .chip-mini.e16c { background: linear-gradient(135deg, #1abc9c, #16a085); }
+
+        .chip-mini::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255,255,255,0.8);
+            border-radius: 4px;
+        }
+
+        .chip-info h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .chip-info p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* VLIW Section */
+        .vliw-section {
+            margin: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 60px 40px;
+            color: white;
+        }
+
+        .vliw-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .instruction-demo h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+        }
+
+        .instruction-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .instruction-flow.vliw {
+            flex-direction: row;
+        }
+
+        .vliw-packet {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255,255,255,0.15);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .instruction {
+            background: rgba(255,255,255,0.2);
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            animation: instructionPulse 2s ease-in-out infinite;
+        }
+
+        .instruction.parallel {
+            animation-delay: 0s;
+        }
+
+        .flow-label {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .vs-divider {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            color: #f1c40f;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .vliw-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Translation Section */
+        .translation-section {
+            margin: 80px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .translation-demo {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .source-code,
+        .target-code {
+            background: #2c3e50;
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+        }
+
+        .source-code h3,
+        .target-code h3 {
+            color: #ecf0f1;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .code-block {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .code-line {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
+        }
+
+        .code-block.e2k .code-packet {
+            background: rgba(46, 204, 113, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            border: 2px solid #2ecc71;
+        }
+
+        .code-block.e2k .code-line {
+            border-left-color: #2ecc71;
+            background: rgba(46, 204, 113, 0.05);
+        }
+
+        .translation-arrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .arrow-body {
+            background: #e74c3c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .arrow-head {
+            font-size: 2rem;
+        }
+
+        .translation-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-box {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Applications Grid */
+        .applications-section {
+            margin: 80px 0;
+        }
+
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-top: 4px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .app-card.defense { border-top-color: #e74c3c; }
+        .app-card.government { border-top-color: #3498db; }
+        .app-card.science { border-top-color: #2ecc71; }
+        .app-card.industry { border-top-color: #f39c12; }
+
+        .app-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .app-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .app-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .app-card li {
+            color: #7f8c8d;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .app-card li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 12px;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+            background: white;
+            border-radius: 12px;
+            padding: 60px 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table {
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .table-header,
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+
+        .table-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .table-row:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .header-cell,
+        .cell {
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .header-cell:last-child,
+        .cell:last-child {
+            border-right: none;
+        }
+
+        .header-cell.highlight,
+        .cell.highlight {
+            background: rgba(52, 152, 219, 0.1);
+            font-weight: bold;
+            color: #2980b9;
+        }
+
+        /* Roadmap */
+        .roadmap-section {
+            margin: 80px 0;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            border-radius: 12px;
+            padding: 60px 40px;
+            color: white;
+        }
+
+        .roadmap-container {
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .roadmap-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #2ecc71, #f39c12, #e74c3c);
+            border-radius: 2px;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 50px;
+            margin-left: 40px;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .roadmap-item[data-status="completed"]::before {
+            background: #2ecc71;
+        }
+
+        .roadmap-item[data-status="active"]::before {
+            background: #f39c12;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .roadmap-item[data-status="future"]::before {
+            background: #e74c3c;
+            opacity: 0.6;
+        }
+
+        .roadmap-year {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .roadmap-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .roadmap-content p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .computer-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin: 60px 0 40px;
+            gap: 20px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Animations */
+        @keyframes circuitMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(20px, 20px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes coreActivity {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        @keyframes instructionPulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(241, 196, 15, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(241, 196, 15, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .vliw-container,
+            .translation-demo {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .vs-divider,
+            .translation-arrow {
+                transform: rotate(90deg);
+                margin: 20px 0;
+            }
+            
+            .evolution-timeline {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .evolution-track {
+                display: none;
+            }
+            
+            .translation-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .applications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 1px;
+            }
+            
+            .computer-navigation {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .processor-hero {
+                padding: 40px 0;
+            }
+            
+            .vliw-section,
+            .translation-section,
+            .comparison-section,
+            .roadmap-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.target);
+                let current = 0;
+                const increment = target / 60;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
+
+        // Core Activity Animation
+        function startCoreActivity() {
+            const cores = document.querySelectorAll('.core-block');
+            cores.forEach((core, index) => {
+                core.style.setProperty('--core', index + 1);
+            });
+        }
+
+        // VLIW Animation
+        function animateVLIW() {
+            const traditionalInstructions = document.querySelectorAll('.traditional .instruction');
+            const vliwInstructions = document.querySelectorAll('.parallel');
+            
+            // Traditional sequential animation
+            traditionalInstructions.forEach((instr, index) => {
+                instr.style.animationDelay = `${index * 0.5}s`;
+            });
+            
+            // VLIW parallel animation (all at once)
+            vliwInstructions.forEach(instr => {
+                instr.style.animationDelay = '0s';
+            });
+        }
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        
+                        // Trigger specific animations
+                        if (entry.target.classList.contains('translation-stats')) {
+                            setTimeout(animateCounters, 300);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Apply to sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.8s ease';
+                observer.observe(section);
+            });
+        }
+
+        // Evolution timeline animation
+        function animateEvolution() {
+            const items = document.querySelectorAll('.evolution-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            startCoreActivity();
+            animateVLIW();
+            initScrollAnimations();
+            
+            // Delayed animations
+            setTimeout(animateEvolution, 1000);
+            
+            // Add hover effects to app cards
+            const appCards = document.querySelectorAll('.app-card');
+            appCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

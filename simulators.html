@@ -4,27 +4,643 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Интерактивные симуляторы исторических интерфейсов вычислительной техники">
-    <title>Симуляторы - История вычислительной техники</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/simulators.css">
-    <!-- Фавиконка -->
-    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
-    <!-- OpenGraph теги -->
-    <meta property="og:title" content="Симуляторы - История вычислительной техники">
-    <meta property="og:description" content="Интерактивные симуляторы исторических интерфейсов вычислительной техники">
-    <meta property="og:image" content="assets/images/ui/og-image.jpg">
-    <meta property="og:type" content="website">
+    <title>Симуляторы - Байты истории</title>
+    <style>
+        /* Базовые стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #2465e9;
+            --secondary-color: #e94e1b;
+            --dark-color: #232527;
+            --light-color: #f7f9fc;
+            --grey-color: #8c8c8c;
+            --background-color: #ffffff;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--background-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Хедер */
+        .site-header {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo-symbol {
+            font-size: 1.5rem;
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+        }
+
+        .hamburger-menu {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        .main-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--dark-color);
+            padding: 80px 20px 20px;
+            transition: right 0.3s ease;
+            z-index: 99;
+        }
+
+        .main-nav.active {
+            right: 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .main-nav a {
+            color: var(--light-color);
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .main-nav a.active,
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Основной контент */
+        .main-content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--grey-color);
+            margin-bottom: 3rem;
+        }
+
+        .simulators-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .simulators-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+
+        /* Карточки симуляторов */
+        .simulator-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .simulator-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .simulator-header {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .simulator-header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .era-badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .simulator-content {
+            padding: 20px;
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            height: 300px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .simulator-info {
+            padding: 15px 20px;
+            background-color: var(--light-color);
+            font-size: 0.9rem;
+            color: var(--grey-color);
+        }
+
+        /* Терминал МЭСМ */
+        .terminal-output {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+
+        .terminal-input {
+            border: none;
+            background: transparent;
+            color: #00ff00;
+            font-family: inherit;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+        }
+
+        .terminal-input::before {
+            content: '> ';
+            color: #00ff00;
+        }
+
+        /* DOS Симулятор */
+        .dos-simulator {
+            background-color: #000080;
+            color: #c0c0c0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .dos-window {
+            border: 2px outset #c0c0c0;
+            background-color: #000080;
+        }
+
+        .dos-header {
+            background: linear-gradient(to bottom, #0080ff, #0040c0);
+            color: white;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dos-title {
+            font-weight: bold;
+        }
+
+        .dos-controls {
+            display: flex;
+            gap: 5px;
+        }
+
+        .dos-controls span {
+            width: 16px;
+            height: 16px;
+            background-color: #c0c0c0;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px outset #c0c0c0;
+        }
+
+        .dos-controls span:hover {
+            background-color: #e0e0e0;
+        }
+
+        .dos-output {
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            white-space: pre-wrap;
+            font-size: 14px;
+        }
+
+        .dos-input {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #c0c0c0;
+        }
+
+        .dos-prompt {
+            margin-right: 5px;
+        }
+
+        .dos-command {
+            background: transparent;
+            border: none;
+            color: #c0c0c0;
+            font-family: inherit;
+            font-size: 14px;
+            flex: 1;
+            outline: none;
+        }
+
+        /* Windows 3.1 Симулятор */
+        .windows-simulator {
+            background: linear-gradient(to bottom, #008080, #004040);
+            color: black;
+            position: relative;
+            height: 400px;
+        }
+
+        .windows-desktop {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .desktop-icons {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .desktop-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .desktop-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .desktop-icon img {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .desktop-icon span {
+            font-size: 11px;
+            color: white;
+            text-align: center;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+        }
+
+        .taskbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 38px;
+            background: linear-gradient(to bottom, #c0c0c0, #808080);
+            border-top: 1px solid #dfdfdf;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .start-button {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .start-button:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+        }
+
+        .start-button img {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+        .taskbar-programs {
+            flex: 1;
+            margin-left: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .taskbar-program {
+            padding: 5px 10px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .taskbar-program.active {
+            border: 1px inset #c0c0c0;
+        }
+
+        .taskbar-time {
+            font-size: 11px;
+            padding: 5px 10px;
+            border: 1px inset #c0c0c0;
+            background-color: #c0c0c0;
+        }
+
+        .start-menu {
+            position: absolute;
+            bottom: 38px;
+            left: 5px;
+            width: 200px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            display: none;
+            z-index: 1000;
+        }
+
+        .start-menu.active {
+            display: block;
+        }
+
+        .start-menu-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 11px;
+            border-bottom: 1px solid #a0a0a0;
+        }
+
+        .start-menu-item:hover {
+            background-color: #0080ff;
+            color: white;
+        }
+
+        .start-menu-item img {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+        .windows-window {
+            position: absolute;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            min-width: 200px;
+            min-height: 150px;
+            z-index: 100;
+        }
+
+        .window-header {
+            background: linear-gradient(to right, #0080ff, #0040c0);
+            color: white;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: move;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 2px;
+        }
+
+        .window-controls button {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .window-controls button:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+        }
+
+        .window-content {
+            padding: 10px;
+            height: calc(100% - 30px);
+        }
+
+        /* Специальные стили для программ */
+        .notepad-content {
+            width: 100%;
+            height: 100%;
+            border: 1px inset #c0c0c0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            resize: none;
+            background-color: white;
+        }
+
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            width: 200px;
+        }
+
+        .calculator-display {
+            grid-column: 1 / -1;
+            background-color: white;
+            border: 1px inset #c0c0c0;
+            padding: 5px;
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 5px;
+        }
+
+        .calculator button {
+            height: 30px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .calculator button:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+        }
+
+        .calculator button:active {
+            border: 1px inset #c0c0c0;
+        }
+
+        .paint-tools {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .paint-tool {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(to bottom, #dfdfdf, #c0c0c0);
+            border: 1px outset #c0c0c0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .paint-tool.active {
+            border: 1px inset #c0c0c0;
+        }
+
+        .paint-canvas {
+            border: 1px inset #c0c0c0;
+            background-color: white;
+            cursor: crosshair;
+        }
+
+        /* Футер */
+        .site-footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--light-color);
+            opacity: 0.8;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="app-container">
         <!-- Хедер с логотипом и меню -->
         <header class="site-header">
             <div class="logo-container">
-                <div class="logo" id="animated-logo">
+                <a href="index.html" class="logo">
                     <span class="logo-symbol">⌘</span>
                     <span class="logo-text">Байты истории</span>
-                </div>
+                </a>
             </div>
             <div class="hamburger-menu" id="menu-toggle">
                 <span></span>
@@ -50,28 +666,35 @@
                 <p class="section-description">Погрузитесь в историю через интерактивные симуляторы интерфейсов разных эпох</p>
 
                 <div class="simulators-grid">
-                    <!-- Симулятор терминала -->
-                    <div class="simulator-card" id="terminal-simulator">
+                    <!-- Симулятор терминала МЭСМ -->
+                    <div class="simulator-card">
                         <div class="simulator-header">
                             <h2>Терминал МЭСМ</h2>
                             <span class="era-badge">1950-е</span>
                         </div>
-                        <div class="simulator-content">
-                            <div class="terminal-output"></div>
-                            <div class="terminal-input" contenteditable="true"></div>
+                        <div class="simulator-content" id="terminal-simulator">
+                            <div class="terminal-output" id="terminal-output">
+МЭСМ - Малая Электронная Счетная Машина (1951)
+Добро пожаловать в симулятор терминала
+Введите "help" для получения списка команд
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <span style="color: #00ff00;">&gt; </span>
+                                <input type="text" class="terminal-input" id="terminal-input" style="background: transparent; border: none; color: #00ff00; font-family: inherit; font-size: 14px; flex: 1; outline: none;">
+                            </div>
                         </div>
                         <div class="simulator-info">
-                            <p>Симулятор терминала первой советской ЭВМ МЭСМ. Попробуйте ввести команды: help, date, info, list, clear</p>
+                            <p>Симулятор терминала первой советской ЭВМ МЭСМ. Попробуйте команды: <strong>help</strong>, <strong>date</strong>, <strong>info</strong>, <strong>list</strong>, <strong>clear</strong></p>
                         </div>
                     </div>
 
-                    <!-- Симулятор DOS -->
-                    <div class="simulator-card" id="dos-simulator">
+                    <!-- Симулятор MS-DOS -->
+                    <div class="simulator-card">
                         <div class="simulator-header">
                             <h2>MS-DOS</h2>
                             <span class="era-badge">1980-е</span>
                         </div>
-                        <div class="simulator-content">
+                        <div class="simulator-content dos-simulator" id="dos-simulator">
                             <div class="dos-window">
                                 <div class="dos-header">
                                     <span class="dos-title">MS-DOS 3.3</span>
@@ -81,68 +704,74 @@
                                         <span class="dos-close">×</span>
                                     </div>
                                 </div>
-                                <div class="dos-output"></div>
+                                <div class="dos-output" id="dos-output">Microsoft(R) MS-DOS(R) Version 3.3
+(C)Copyright Microsoft Corp 1981-1987
+
+C:\></div>
                                 <div class="dos-input">
-                                    <span class="dos-prompt">C:\></span>
-                                    <input type="text" class="dos-command">
+                                    <span class="dos-prompt">C:\&gt;</span>
+                                    <input type="text" class="dos-command" id="dos-command">
                                 </div>
                             </div>
                         </div>
                         <div class="simulator-info">
-                            <p>Симулятор операционной системы MS-DOS. Попробуйте команды: dir, cd, type, copy, del</p>
+                            <p>Симулятор MS-DOS. Попробуйте команды: <strong>dir</strong>, <strong>cd</strong>, <strong>type</strong>, <strong>copy</strong>, <strong>del</strong>, <strong>cls</strong>, <strong>help</strong></p>
                         </div>
                     </div>
 
                     <!-- Симулятор Windows 3.1 -->
                     <div class="simulator-card">
-                        <div class="card-header">
-                            <h3>Windows 3.1</h3>
+                        <div class="simulator-header">
+                            <h2>Windows 3.1</h2>
                             <span class="era-badge">1990-е</span>
                         </div>
                         <div class="simulator-content windows-simulator">
-                            <div class="windows-desktop">
+                            <div class="windows-desktop" id="windows-desktop">
                                 <!-- Иконки на рабочем столе -->
                                 <div class="desktop-icons">
                                     <div class="desktop-icon" data-program="notepad">
-                                        <img src="assets/images/ui/notepad.png" alt="Блокнот">
+                                        <div style="width: 32px; height: 32px; background: #fff; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 12px;">📄</div>
                                         <span>Блокнот</span>
                                     </div>
                                     <div class="desktop-icon" data-program="calculator">
-                                        <img src="assets/images/ui/calc.png" alt="Калькулятор">
+                                        <div style="width: 32px; height: 32px; background: #c0c0c0; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 12px;">🔢</div>
                                         <span>Калькулятор</span>
                                     </div>
                                     <div class="desktop-icon" data-program="paint">
-                                        <img src="assets/images/ui/paint.png" alt="Paint">
+                                        <div style="width: 32px; height: 32px; background: #ffff00; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 12px;">🎨</div>
                                         <span>Paint</span>
                                     </div>
                                 </div>
 
                                 <!-- Меню Start -->
-                                <div class="start-menu">
+                                <div class="start-menu" id="start-menu">
                                     <div class="start-menu-item" data-program="notepad">
-                                        <img src="assets/images/ui/notepad.png" alt="Блокнот">
+                                        <div style="width: 16px; height: 16px; background: #fff; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 8px;">📄</div>
                                         <span>Блокнот</span>
                                     </div>
                                     <div class="start-menu-item" data-program="calculator">
-                                        <img src="assets/images/ui/calc.png" alt="Калькулятор">
+                                        <div style="width: 16px; height: 16px; background: #c0c0c0; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 8px;">🔢</div>
                                         <span>Калькулятор</span>
                                     </div>
                                     <div class="start-menu-item" data-program="paint">
-                                        <img src="assets/images/ui/paint.png" alt="Paint">
+                                        <div style="width: 16px; height: 16px; background: #ffff00; border: 1px solid #000; display: flex; align-items: center; justify-content: center; font-size: 8px;">🎨</div>
                                         <span>Paint</span>
                                     </div>
                                 </div>
 
                                 <!-- Панель задач -->
                                 <div class="taskbar">
-                                    <div class="start-button">
-                                        <img src="assets/images/ui/start.png" alt="Start">
-                                        <span>Start</span>
+                                    <div class="start-button" id="start-button">
+                                        <div style="width: 16px; height: 16px; background: #ff0000; margin-right: 5px; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">⊞</div>
+                                        <span>Пуск</span>
                                     </div>
-                                    <div class="taskbar-programs"></div>
-                                    <div class="taskbar-time">00:00</div>
+                                    <div class="taskbar-programs" id="taskbar-programs"></div>
+                                    <div class="taskbar-time" id="taskbar-time">12:00</div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="simulator-info">
+                            <p>Симулятор Windows 3.1. <strong>Кликните</strong> по иконкам на рабочем столе или используйте кнопку <strong>Пуск</strong> для запуска программ</p>
                         </div>
                     </div>
                 </div>
@@ -170,8 +799,703 @@
         </footer>
     </div>
 
-    <!-- Скрипты -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/simulators.js"></script>
+    <script>
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initHamburgerMenu();
+            initTerminalSimulator();
+            initDosSimulator();
+            initWindowsSimulator();
+        });
+
+        // Гамбургер меню
+        function initHamburgerMenu() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-navigation');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    menuToggle.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    
+                    if (mainNav.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Закрытие меню при клике на ссылку
+                const navLinks = mainNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+                
+                // Закрытие меню при клике вне области меню
+                document.addEventListener('click', function(event) {
+                    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target) && mainNav.classList.contains('active')) {
+                        menuToggle.classList.remove('active');
+                        mainNav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        }
+
+        // Симулятор терминала МЭСМ
+        function initTerminalSimulator() {
+            const terminalInput = document.getElementById('terminal-input');
+            const terminalOutput = document.getElementById('terminal-output');
+
+            if (!terminalInput || !terminalOutput) return;
+
+            terminalInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const command = terminalInput.value.trim();
+                    
+                    if (command) {
+                        // Добавляем введенную команду
+                        addTerminalOutput(`> ${command}`);
+                        
+                        // Обработка команд
+                        processTerminalCommand(command);
+                        
+                        // Очищаем поле ввода
+                        terminalInput.value = '';
+                    }
+                }
+            });
+
+            // Фокус на поле ввода при клике на терминал
+            document.getElementById('terminal-simulator').addEventListener('click', function() {
+                terminalInput.focus();
+            });
+        }
+
+        // Добавление текста в вывод терминала
+        function addTerminalOutput(text) {
+            const terminalOutput = document.getElementById('terminal-output');
+            if (terminalOutput) {
+                terminalOutput.textContent += '\n' + text;
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
+        }
+
+        // Обработка команд терминала
+        function processTerminalCommand(command) {
+            switch(command.toLowerCase()) {
+                case 'help':
+                    addTerminalOutput('Доступные команды:');
+                    addTerminalOutput('  help  - показать список команд');
+                    addTerminalOutput('  date  - показать текущую дату');
+                    addTerminalOutput('  info  - информация о МЭСМ');
+                    addTerminalOutput('  list  - список программ');
+                    addTerminalOutput('  clear - очистить экран');
+                    addTerminalOutput('  calc  - простой калькулятор');
+                    break;
+                    
+                case 'date':
+                    const now = new Date();
+                    addTerminalOutput(`Дата: ${now.toLocaleDateString()}`);
+                    addTerminalOutput(`Время: ${now.toLocaleTimeString()}`);
+                    break;
+                    
+                case 'info':
+                    addTerminalOutput('МЭСМ - Малая Электронная Счетная Машина');
+                    addTerminalOutput('Разработчик: С.А. Лебедев');
+                    addTerminalOutput('Год создания: 1951');
+                    addTerminalOutput('Быстродействие: 50 операций/сек');
+                    addTerminalOutput('Память: 31 число по 21 разряду');
+                    addTerminalOutput('Потребление: 25 кВт');
+                    break;
+                    
+                case 'list':
+                    addTerminalOutput('Доступные программы:');
+                    addTerminalOutput('  calc.exe     - калькулятор');
+                    addTerminalOutput('  editor.exe   - текстовый редактор');
+                    addTerminalOutput('  math.exe     - математические функции');
+                    addTerminalOutput('  demo.exe     - демонстрация');
+                    break;
+                    
+                case 'clear':
+                    document.getElementById('terminal-output').textContent = 'МЭСМ - Малая Электронная Счетная Машина (1951)\nДобро пожаловать в симулятор терминала\nВведите "help" для получения списка команд';
+                    break;
+
+                case 'calc':
+                    addTerminalOutput('Простой калькулятор. Введите выражение:');
+                    addTerminalOutput('Например: 2+3, 10-5, 6*7, 20/4');
+                    break;
+                    
+                default:
+                    // Проверяем, не является ли команда математическим выражением
+                    if (/^[\d+\-*/.() ]+$/.test(command)) {
+                        try {
+                            const result = eval(command.replace(/[^0-9+\-*/.() ]/g, ''));
+                            addTerminalOutput(`= ${result}`);
+                        } catch (e) {
+                            addTerminalOutput('Ошибка в выражении');
+                        }
+                    } else {
+                        addTerminalOutput(`Неизвестная команда: "${command}"`);
+                        addTerminalOutput('Введите "help" для получения списка команд');
+                    }
+            }
+        }
+
+        // Симулятор MS-DOS
+        function initDosSimulator() {
+            const dosCommand = document.getElementById('dos-command');
+            const dosOutput = document.getElementById('dos-output');
+            const dosControls = document.querySelector('.dos-controls');
+
+            if (!dosCommand || !dosOutput) return;
+
+            // Обработка команд
+            dosCommand.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const command = dosCommand.value.trim();
+                    if (command) {
+                        addDosOutput(`C:\\> ${command}`);
+                        processDosCommand(command);
+                        dosCommand.value = '';
+                    }
+                }
+            });
+
+            // Обработка кнопок управления окном
+            if (dosControls) {
+                dosControls.querySelector('.dos-minimize').addEventListener('click', function() {
+                    document.getElementById('dos-simulator').style.display = 'none';
+                    setTimeout(() => {
+                        document.getElementById('dos-simulator').style.display = 'block';
+                    }, 2000);
+                });
+
+                dosControls.querySelector('.dos-maximize').addEventListener('click', function() {
+                    const simulator = document.getElementById('dos-simulator');
+                    simulator.classList.toggle('maximized');
+                });
+
+                dosControls.querySelector('.dos-close').addEventListener('click', function() {
+                    addDosOutput('Невозможно закрыть системную программу');
+                });
+            }
+
+            // Фокус на поле ввода при клике
+            document.getElementById('dos-simulator').addEventListener('click', function() {
+                dosCommand.focus();
+            });
+        }
+
+        // Добавление текста в вывод DOS
+        function addDosOutput(text) {
+            const dosOutput = document.getElementById('dos-output');
+            if (dosOutput) {
+                dosOutput.textContent += '\n' + text;
+                dosOutput.scrollTop = dosOutput.scrollHeight;
+            }
+        }
+
+        // Обработка команд DOS
+        function processDosCommand(command) {
+            const [cmd, ...args] = command.toLowerCase().split(' ');
+            
+            switch(cmd) {
+                case 'dir':
+                    addDosOutput('Том в устройстве C не имеет метки');
+                    addDosOutput('Серийный номер тома: 1A2B-3C4D');
+                    addDosOutput('');
+                    addDosOutput('Содержимое папки C:\\');
+                    addDosOutput('');
+                    addDosOutput('AUTOEXEC BAT      128  17-03-87  12:00');
+                    addDosOutput('CONFIG   SYS       64  17-03-87  12:00');
+                    addDosOutput('COMMAND  COM    25307  17-03-87  12:00');
+                    addDosOutput('DOS          <DIR>     17-03-87  12:00');
+                    addDosOutput('WINDOWS      <DIR>     17-03-87  12:00');
+                    addDosOutput('       3 файл(ов)     25499 байт');
+                    addDosOutput('       2 папок   1048576 байт свободно');
+                    break;
+                    
+                case 'cd':
+                    if (args[0]) {
+                        addDosOutput(`Текущая папка: C:\\${args[0].toUpperCase()}`);
+                    } else {
+                        addDosOutput('C:\\');
+                    }
+                    break;
+                    
+                case 'type':
+                    if (args[0]) {
+                        addDosOutput(`Содержимое файла ${args[0].toUpperCase()}:`);
+                        if (args[0].toLowerCase() === 'autoexec.bat') {
+                            addDosOutput('@ECHO OFF');
+                            addDosOutput('PATH C:\\DOS;C:\\WINDOWS');
+                            addDosOutput('SET TEMP=C:\\TEMP');
+                        } else {
+                            addDosOutput('Это содержимое файла...');
+                            addDosOutput('Демонстрационный текст');
+                        }
+                    } else {
+                        addDosOutput('Необходимо указать имя файла');
+                    }
+                    break;
+                    
+                case 'copy':
+                    if (args.length >= 2) {
+                        addDosOutput(`Скопирован 1 файл`);
+                    } else {
+                        addDosOutput('Неверное число параметров');
+                    }
+                    break;
+                    
+                case 'del':
+                case 'erase':
+                    if (args[0]) {
+                        addDosOutput(`Файл ${args[0].toUpperCase()} удален`);
+                    } else {
+                        addDosOutput('Необходимо указать имя файла');
+                    }
+                    break;
+                    
+                case 'cls':
+                    document.getElementById('dos-output').textContent = 'Microsoft(R) MS-DOS(R) Version 3.3\n(C)Copyright Microsoft Corp 1981-1987\n\nC:\\>';
+                    break;
+                    
+                case 'help':
+                    addDosOutput('Доступные команды MS-DOS:');
+                    addDosOutput('  DIR     - показать содержимое папки');
+                    addDosOutput('  CD      - сменить папку');
+                    addDosOutput('  TYPE    - показать содержимое файла');
+                    addDosOutput('  COPY    - копировать файл');
+                    addDosOutput('  DEL     - удалить файл');
+                    addDosOutput('  CLS     - очистить экран');
+                    addDosOutput('  VER     - версия системы');
+                    addDosOutput('  TIME    - текущее время');
+                    addDosOutput('  DATE    - текущая дата');
+                    break;
+
+                case 'ver':
+                    addDosOutput('MS-DOS версия 3.30');
+                    break;
+
+                case 'time':
+                    const time = new Date().toLocaleTimeString();
+                    addDosOutput(`Текущее время: ${time}`);
+                    break;
+
+                case 'date':
+                    const date = new Date().toLocaleDateString();
+                    addDosOutput(`Текущая дата: ${date}`);
+                    break;
+                    
+                default:
+                    addDosOutput(`Неверная команда или имя файла: ${cmd.toUpperCase()}`);
+            }
+        }
+
+        // Симулятор Windows 3.1
+        function initWindowsSimulator() {
+            const desktop = document.getElementById('windows-desktop');
+            const startButton = document.getElementById('start-button');
+            const startMenu = document.getElementById('start-menu');
+            const taskbarPrograms = document.getElementById('taskbar-programs');
+            const taskbarTime = document.getElementById('taskbar-time');
+            let windowCounter = 0;
+
+            // Обновление времени
+            function updateTime() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                taskbarTime.textContent = `${hours}:${minutes}`;
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            // Обработка кнопки Пуск
+            startButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                startMenu.classList.toggle('active');
+            });
+
+            // Закрытие меню при клике вне его
+            document.addEventListener('click', (e) => {
+                if (!startButton.contains(e.target) && !startMenu.contains(e.target)) {
+                    startMenu.classList.remove('active');
+                }
+            });
+
+            // Создание окна программы
+            function createWindow(program) {
+                const windowId = `window-${++windowCounter}`;
+                const window = document.createElement('div');
+                window.className = 'windows-window';
+                window.id = windowId;
+                window.style.left = (50 + windowCounter * 20) + 'px';
+                window.style.top = (50 + windowCounter * 20) + 'px';
+                window.style.width = '300px';
+                window.style.height = '200px';
+                window.style.zIndex = 100 + windowCounter;
+
+                let windowContent = '';
+                switch (program) {
+                    case 'notepad':
+                        window.style.width = '400px';
+                        window.style.height = '300px';
+                        windowContent = `
+                            <div class="window-header">
+                                <span class="window-title">Блокнот - Безымянный</span>
+                                <div class="window-controls">
+                                    <button class="minimize">_</button>
+                                    <button class="maximize">□</button>
+                                    <button class="close">×</button>
+                                </div>
+                            </div>
+                            <div class="window-content">
+                                <textarea class="notepad-content" placeholder="Введите текст..."></textarea>
+                            </div>
+                        `;
+                        break;
+                    case 'calculator':
+                        window.style.width = '220px';
+                        window.style.height = '280px';
+                        windowContent = `
+                            <div class="window-header">
+                                <span class="window-title">Калькулятор</span>
+                                <div class="window-controls">
+                                    <button class="minimize">_</button>
+                                    <button class="maximize">□</button>
+                                    <button class="close">×</button>
+                                </div>
+                            </div>
+                            <div class="window-content">
+                                <div class="calculator">
+                                    <div class="calculator-display">0</div>
+                                    <button onclick="clearCalculator()">C</button>
+                                    <button onclick="calculateOperation('/')">/</button>
+                                    <button onclick="calculateOperation('*')">*</button>
+                                    <button onclick="deleteLastDigit()">←</button>
+                                    <button onclick="inputNumber('7')">7</button>
+                                    <button onclick="inputNumber('8')">8</button>
+                                    <button onclick="inputNumber('9')">9</button>
+                                    <button onclick="calculateOperation('-')">-</button>
+                                    <button onclick="inputNumber('4')">4</button>
+                                    <button onclick="inputNumber('5')">5</button>
+                                    <button onclick="inputNumber('6')">6</button>
+                                    <button onclick="calculateOperation('+')">+</button>
+                                    <button onclick="inputNumber('1')">1</button>
+                                    <button onclick="inputNumber('2')">2</button>
+                                    <button onclick="inputNumber('3')">3</button>
+                                    <button onclick="calculateResult()" style="grid-row: span 2;">=</button>
+                                    <button onclick="inputNumber('0')" style="grid-column: span 2;">0</button>
+                                    <button onclick="inputNumber('.')">.</button>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                    case 'paint':
+                        window.style.width = '500px';
+                        window.style.height = '400px';
+                        windowContent = `
+                            <div class="window-header">
+                                <span class="window-title">Paint - Безымянный</span>
+                                <div class="window-controls">
+                                    <button class="minimize">_</button>
+                                    <button class="maximize">□</button>
+                                    <button class="close">×</button>
+                                </div>
+                            </div>
+                            <div class="window-content">
+                                <div class="paint-tools">
+                                    <div class="paint-tool active" data-tool="pencil">✏️</div>
+                                    <div class="paint-tool" data-tool="eraser">🧹</div>
+                                    <div class="paint-tool" data-tool="fill">🪣</div>
+                                    <div class="paint-tool" data-tool="clear">🗑️</div>
+                                </div>
+                                <canvas class="paint-canvas" width="450" height="300"></canvas>
+                            </div>
+                        `;
+                        break;
+                }
+
+                window.innerHTML = windowContent;
+                desktop.appendChild(window);
+
+                // Добавление программы в панель задач
+                const taskbarProgram = document.createElement('div');
+                taskbarProgram.className = 'taskbar-program active';
+                taskbarProgram.textContent = getWindowTitle(program);
+                taskbarPrograms.appendChild(taskbarProgram);
+
+                // Функция получения заголовка окна
+                function getWindowTitle(prog) {
+                    switch(prog) {
+                        case 'notepad': return 'Блокнот';
+                        case 'calculator': return 'Калькулятор';
+                        case 'paint': return 'Paint';
+                        default: return prog;
+                    }
+                }
+
+                // Обработка перетаскивания окна
+                const header = window.querySelector('.window-header');
+                let isDragging = false;
+                let startX, startY, startLeft, startTop;
+
+                header.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    startLeft = parseInt(window.style.left);
+                    startTop = parseInt(window.style.top);
+                    window.style.zIndex = 1000;
+                    e.preventDefault();
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        const deltaX = e.clientX - startX;
+                        const deltaY = e.clientY - startY;
+                        const newLeft = Math.max(0, startLeft + deltaX);
+                        const newTop = Math.max(0, startTop + deltaY);
+                        window.style.left = newLeft + 'px';
+                        window.style.top = newTop + 'px';
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+
+                // Обработка кнопок управления окном
+                const minimizeBtn = window.querySelector('.minimize');
+                const maximizeBtn = window.querySelector('.maximize');
+                const closeBtn = window.querySelector('.close');
+
+                minimizeBtn.addEventListener('click', () => {
+                    window.style.display = 'none';
+                    taskbarProgram.classList.remove('active');
+                });
+
+                maximizeBtn.addEventListener('click', () => {
+                    if (window.classList.contains('maximized')) {
+                        window.classList.remove('maximized');
+                        window.style.width = '300px';
+                        window.style.height = '200px';
+                        window.style.left = '50px';
+                        window.style.top = '50px';
+                    } else {
+                        window.classList.add('maximized');
+                        window.style.width = 'calc(100% - 10px)';
+                        window.style.height = 'calc(100% - 48px)';
+                        window.style.left = '5px';
+                        window.style.top = '5px';
+                    }
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    window.remove();
+                    taskbarProgram.remove();
+                });
+
+                // Клик по кнопке в панели задач для восстановления окна
+                taskbarProgram.addEventListener('click', () => {
+                    if (window.style.display === 'none') {
+                        window.style.display = 'block';
+                        taskbarProgram.classList.add('active');
+                    } else {
+                        window.style.display = 'none';
+                        taskbarProgram.classList.remove('active');
+                    }
+                });
+
+                // Инициализация функциональности программ
+                if (program === 'paint') {
+                    initPaint(window);
+                }
+            }
+
+            // Инициализация Paint
+            function initPaint(window) {
+                const canvas = window.querySelector('.paint-canvas');
+                const ctx = canvas.getContext('2d');
+                const tools = window.querySelectorAll('.paint-tool');
+                let isDrawing = false;
+                let currentTool = 'pencil';
+                let lastX = 0;
+                let lastY = 0;
+
+                // Настройка холста
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#000';
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Выбор инструмента
+                tools.forEach(tool => {
+                    tool.addEventListener('click', () => {
+                        tools.forEach(t => t.classList.remove('active'));
+                        tool.classList.add('active');
+                        currentTool = tool.dataset.tool;
+                    });
+                });
+
+                // Обработка рисования
+                canvas.addEventListener('mousedown', (e) => {
+                    isDrawing = true;
+                    const rect = canvas.getBoundingClientRect();
+                    lastX = e.clientX - rect.left;
+                    lastY = e.clientY - rect.top;
+
+                    if (currentTool === 'clear') {
+                        ctx.fillStyle = '#fff';
+                        ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        isDrawing = false;
+                    }
+                });
+
+                canvas.addEventListener('mousemove', (e) => {
+                    if (!isDrawing) return;
+
+                    const rect = canvas.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    switch (currentTool) {
+                        case 'pencil':
+                            ctx.globalCompositeOperation = 'source-over';
+                            ctx.strokeStyle = '#000';
+                            ctx.beginPath();
+                            ctx.moveTo(lastX, lastY);
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                            break;
+                        case 'eraser':
+                            ctx.globalCompositeOperation = 'destination-out';
+                            ctx.beginPath();
+                            ctx.moveTo(lastX, lastY);
+                            ctx.lineTo(x, y);
+                            ctx.stroke();
+                            ctx.globalCompositeOperation = 'source-over';
+                            break;
+                        case 'fill':
+                            ctx.fillStyle = '#ff0000';
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                            isDrawing = false;
+                            break;
+                    }
+
+                    lastX = x;
+                    lastY = y;
+                });
+
+                canvas.addEventListener('mouseup', () => {
+                    isDrawing = false;
+                });
+
+                canvas.addEventListener('mouseleave', () => {
+                    isDrawing = false;
+                });
+            }
+
+            // Обработка кликов по иконкам и пунктам меню
+            const programLaunchers = document.querySelectorAll('.desktop-icon, .start-menu-item');
+            programLaunchers.forEach(launcher => {
+                launcher.addEventListener('click', () => {
+                    const program = launcher.dataset.program;
+                    createWindow(program);
+                    startMenu.classList.remove('active');
+                });
+            });
+        }
+
+        // Глобальные функции для калькулятора
+        let calcDisplay = '0';
+        let calcPrevValue = null;
+        let calcOperation = null;
+        let calcWaitingForOperand = false;
+
+        function updateCalculatorDisplay() {
+            const display = document.querySelector('.calculator-display');
+            if (display) {
+                display.textContent = calcDisplay;
+            }
+        }
+
+        function inputNumber(num) {
+            if (calcWaitingForOperand) {
+                calcDisplay = num;
+                calcWaitingForOperand = false;
+            } else {
+                calcDisplay = calcDisplay === '0' ? num : calcDisplay + num;
+            }
+            updateCalculatorDisplay();
+        }
+
+        function calculateOperation(nextOperation) {
+            const inputValue = parseFloat(calcDisplay);
+
+            if (calcPrevValue === null) {
+                calcPrevValue = inputValue;
+            } else if (calcOperation) {
+                const currentValue = calcPrevValue || 0;
+                const newValue = calculate(currentValue, inputValue, calcOperation);
+
+                calcDisplay = String(newValue);
+                calcPrevValue = newValue;
+                updateCalculatorDisplay();
+            }
+
+            calcWaitingForOperand = true;
+            calcOperation = nextOperation;
+        }
+
+        function calculate(firstOperand, secondOperand, operation) {
+            switch (operation) {
+                case '+':
+                    return firstOperand + secondOperand;
+                case '-':
+                    return firstOperand - secondOperand;
+                case '*':
+                    return firstOperand * secondOperand;
+                case '/':
+                    return firstOperand / secondOperand;
+                default:
+                    return secondOperand;
+            }
+        }
+
+        function calculateResult() {
+            const inputValue = parseFloat(calcDisplay);
+
+            if (calcPrevValue !== null && calcOperation) {
+                const newValue = calculate(calcPrevValue, inputValue, calcOperation);
+                calcDisplay = String(newValue);
+                calcPrevValue = null;
+                calcOperation = null;
+                calcWaitingForOperand = true;
+                updateCalculatorDisplay();
+            }
+        }
+
+        function clearCalculator() {
+            calcDisplay = '0';
+            calcPrevValue = null;
+            calcOperation = null;
+            calcWaitingForOperand = false;
+            updateCalculatorDisplay();
+        }
+
+        function deleteLastDigit() {
+            calcDisplay = calcDisplay.length > 1 ? calcDisplay.slice(0, -1) : '0';
+            updateCalculatorDisplay();
+        }
+    </script>
 </body>
-</html> 
+</html>
